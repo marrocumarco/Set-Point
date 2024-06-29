@@ -17,7 +17,7 @@ enum Point: Int {
 }
 
 class Player {
-    var points: Point = .zero
+    var points = 0
     var games: Int = 0
     var sets: Int = 0
     let name: String

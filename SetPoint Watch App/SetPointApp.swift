@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct SetPointWatchAppApp: App {
+struct SetPointWatchApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(match: Match(player1Name: "Player 1", player2Name: "Player 2"))

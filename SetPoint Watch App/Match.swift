@@ -16,6 +16,8 @@ class Match: ObservableObject {
     @Published var endedSets = [EndedSet]()
     @Published var player1GameScoreDescription = Point.zero.rawValue.description
     @Published var player2GameScoreDescription = Point.zero.rawValue.description
+    @Published var isTiebreak = false
+    @Published var showCurrentSetScore = true
 
     init(player1Name: String, player2Name: String) {
         self.player1 = Player(name: player1Name)
@@ -24,21 +26,29 @@ class Match: ObservableObject {
 
     func pointWonBy(player: Player) {
         let opponent = player === player1 ? player2 : player1
-        if player.points.rawValue + 1 == Point.advantage.rawValue &&
-            opponent.points.rawValue == Point.advantage.rawValue {
-            // deuce
-            opponent.points = Point(rawValue: Point.forthy.rawValue) ?? .zero
+        if isTiebreak {
+            player.points += 1
+            calculatePointDescription(player)
+            calculatePointDescription(opponent)
+            checkSetWin(for: player)
         } else {
-            player.points = Point(rawValue: (player.points.rawValue + 1) % 6) ?? .zero
-            checkGameWin(for: player)
+            if player.points + 1 == Point.advantage.rawValue &&
+                opponent.points == Point.advantage.rawValue {
+                // deuce: score reset to 40 all
+                opponent.points = Point.forthy.rawValue
+            } else {
+                player.points = (player.points + 1) % 6
+                checkGameWin(for: player)
+            }
         }
+
         calculatePointDescription(player)
         calculatePointDescription(opponent)
     }
 
     func checkGameWin(for player: Player) {
         let opponent = player === player1 ? player2 : player1
-        if player.points.rawValue >= 4 && player.points.rawValue >= opponent.points.rawValue + 2 {
+        if player.points >= 4 && player.points >= opponent.points + 2 {
             player.games += 1
             player.resetPoints()
             opponent.resetPoints()
@@ -51,7 +61,18 @@ class Match: ObservableObject {
 
     func checkSetWin(for player: Player) {
         let opponent = player === player1 ? player2 : player1
-        if player.games >= 6 && player.games >= opponent.games + 2 {
+        var setWin = false
+        if isTiebreak {
+            if player.points >= 7 && player.points >= opponent.points + 2 {
+                setWin = true
+                player.games += 1
+                player.resetPoints()
+                opponent.resetPoints()
+            }
+        } else {
+            setWin = player.games >= 6 && player.games >= opponent.games + 2
+        }
+        if setWin {
             player.sets += 1
             endedSets.append(
                 EndedSet(
@@ -62,7 +83,14 @@ class Match: ObservableObject {
             )
             player.resetGames()
             opponent.resetGames()
+            isTiebreak = false
             checkMatchWin(for: player)
+        } else {
+            if !isTiebreak, player.games == 6 && opponent.games == 6 {
+                isTiebreak = true
+                player.resetPoints()
+                opponent.resetPoints()
+            }
         }
     }
 
@@ -71,25 +99,33 @@ class Match: ObservableObject {
             player.resetSets()
             player1.resetSets()
             player2.resetSets()
+            showCurrentSetScore = false
         }
     }
 
     private func calculatePointDescription(_ player: Player) {
         var pointsDescription = ""
-        switch player.points {
-        case .zero:
-            pointsDescription  = "0"
-        case .fifteen:
-            pointsDescription  = "15"
-        case .thirty:
-            pointsDescription  = "30"
-        case .forthy:
-            pointsDescription  = "40"
-        case .advantage:
-            pointsDescription  = "A"
-        case .gameWon:
-            pointsDescription  = "W"
+        if isTiebreak {
+            pointsDescription = player.points.description
+        } else {
+            switch Point(rawValue: player.points) {
+            case .zero:
+                pointsDescription  = "0"
+            case .fifteen:
+                pointsDescription  = "15"
+            case .thirty:
+                pointsDescription  = "30"
+            case .forthy:
+                pointsDescription  = "40"
+            case .advantage:
+                pointsDescription  = "A"
+            case .gameWon:
+                pointsDescription  = "W"
+            default:
+                pointsDescription  = ""
+            }
         }
+
         if player === player1 {
             player1GameScoreDescription = pointsDescription
         } else {

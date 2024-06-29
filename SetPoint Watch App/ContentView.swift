@@ -23,7 +23,12 @@ struct ContentView: View {
                 ForEach(match.endedSets) { set in
                     ScoreStack(player1Score: set.player1Score.description, player2Score: set.player2Score.description)
                 }
-                ScoreStack(player1Score: match.player1.games.description, player2Score: match.player2.games.description)
+                if match.showCurrentSetScore {
+                    ScoreStack(
+                        player1Score: match.player1.games.description,
+                        player2Score: match.player2.games.description
+                    )
+                }
                 Spacer()
             }
             HStack {

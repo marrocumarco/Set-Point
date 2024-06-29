@@ -170,7 +170,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				EB22E00A2C3013D900EB0DDD /* PBXTargetDependency */,
 				EB22DFD82C30112F00EB0DDD /* PBXTargetDependency */,
 			);
 			name = SetPoint;
@@ -189,6 +188,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EB22E0102C3086FC00EB0DDD /* PBXTargetDependency */,
 			);
 			name = "SetPoint Watch App";
 			productName = "SetPoint Watch App";
@@ -361,9 +361,9 @@
 			target = EB22DFD42C30112F00EB0DDD /* SetPoint Watch App */;
 			targetProxy = EB22DFF22C30113200EB0DDD /* PBXContainerItemProxy */;
 		};
-		EB22E00A2C3013D900EB0DDD /* PBXTargetDependency */ = {
+		EB22E0102C3086FC00EB0DDD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = EB22E0092C3013D900EB0DDD /* SwiftLintBuildToolPlugin */;
+			productRef = EB22E00F2C3086FC00EB0DDD /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -722,7 +722,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EB22E0092C3013D900EB0DDD /* SwiftLintBuildToolPlugin */ = {
+		EB22E00F2C3086FC00EB0DDD /* SwiftLintBuildToolPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EB22E0082C30138700EB0DDD /* XCRemoteSwiftPackageReference "SwiftLint" */;
 			productName = "plugin:SwiftLintBuildToolPlugin";

@@ -17,6 +17,7 @@
 		EB22DFF82C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFF72C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift */; };
 		EB22E00C2C3014B500EB0DDD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E00B2C3014B500EB0DDD /* Player.swift */; };
 		EB22E00E2C30365300EB0DDD /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E00D2C30365300EB0DDD /* Match.swift */; };
+		EB22E0122C30A1A400EB0DDD /* EndedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0112C30A1A400EB0DDD /* EndedSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		EB22DFF72C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPoint_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EB22E00B2C3014B500EB0DDD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		EB22E00D2C30365300EB0DDD /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		EB22E0112C30A1A400EB0DDD /* EndedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				EB22DFDA2C30112F00EB0DDD /* SetPointApp.swift */,
 				EB22DFDC2C30112F00EB0DDD /* ContentView.swift */,
 				EB22E00B2C3014B500EB0DDD /* Player.swift */,
+				EB22E0112C30A1A400EB0DDD /* EndedSet.swift */,
 				EB22E00D2C30365300EB0DDD /* Match.swift */,
 				EB22DFDE2C30113200EB0DDD /* Assets.xcassets */,
 				EB22DFE02C30113200EB0DDD /* Preview Content */,
@@ -323,6 +326,7 @@
 				EB22E00C2C3014B500EB0DDD /* Player.swift in Sources */,
 				EB22DFDB2C30112F00EB0DDD /* SetPointApp.swift in Sources */,
 				EB22E00E2C30365300EB0DDD /* Match.swift in Sources */,
+				EB22E0122C30A1A400EB0DDD /* EndedSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

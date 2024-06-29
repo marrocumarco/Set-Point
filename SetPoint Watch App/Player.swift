@@ -14,25 +14,6 @@ enum Point: Int {
     case forthy = 3
     case advantage = 4
     case gameWon = 5
-
-    init?(rawValue: Int) {
-        switch rawValue {
-        case 0:
-            self = Point.zero
-        case 1:
-            self = Point.fifteen
-        case 2:
-            self = Point.thirty
-        case 3:
-            self = Point.forthy
-        case 4:
-            self = Point.advantage
-        case 5:
-            self = Point.gameWon
-        default:
-            self = Point.zero
-        }
-    }
 }
 
 class Player {

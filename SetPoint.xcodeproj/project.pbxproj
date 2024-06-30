@@ -12,12 +12,14 @@
 		EB22DFDD2C30112F00EB0DDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFDC2C30112F00EB0DDD /* ContentView.swift */; };
 		EB22DFDF2C30113200EB0DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB22DFDE2C30113200EB0DDD /* Assets.xcassets */; };
 		EB22DFE22C30113200EB0DDD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB22DFE12C30113200EB0DDD /* Preview Assets.xcassets */; };
-		EB22DFEC2C30113200EB0DDD /* SetPoint_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFEB2C30113200EB0DDD /* SetPoint_Watch_AppTests.swift */; };
+		EB22DFEC2C30113200EB0DDD /* MatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFEB2C30113200EB0DDD /* MatchTests.swift */; };
 		EB22DFF62C30113200EB0DDD /* SetPoint_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFF52C30113200EB0DDD /* SetPoint_Watch_AppUITests.swift */; };
 		EB22DFF82C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFF72C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift */; };
 		EB22E00C2C3014B500EB0DDD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E00B2C3014B500EB0DDD /* Player.swift */; };
 		EB22E00E2C30365300EB0DDD /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E00D2C30365300EB0DDD /* Match.swift */; };
 		EB22E0122C30A1A400EB0DDD /* EndedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0112C30A1A400EB0DDD /* EndedSet.swift */; };
+		EB22E0142C31AB2200EB0DDD /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0132C31AB2200EB0DDD /* PlayerTests.swift */; };
+		EB22E0162C31AD3C00EB0DDD /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0152C31AD3C00EB0DDD /* Point.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,13 +68,15 @@
 		EB22DFDE2C30113200EB0DDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB22DFE12C30113200EB0DDD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EB22DFE72C30113200EB0DDD /* SetPoint Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SetPoint Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB22DFEB2C30113200EB0DDD /* SetPoint_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPoint_Watch_AppTests.swift; sourceTree = "<group>"; };
+		EB22DFEB2C30113200EB0DDD /* MatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTests.swift; sourceTree = "<group>"; };
 		EB22DFF12C30113200EB0DDD /* SetPoint Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SetPoint Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB22DFF52C30113200EB0DDD /* SetPoint_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPoint_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		EB22DFF72C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPoint_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EB22E00B2C3014B500EB0DDD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		EB22E00D2C30365300EB0DDD /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		EB22E0112C30A1A400EB0DDD /* EndedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedSet.swift; sourceTree = "<group>"; };
+		EB22E0132C31AB2200EB0DDD /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
+		EB22E0152C31AD3C00EB0DDD /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,7 @@
 				EB22DFDA2C30112F00EB0DDD /* SetPointApp.swift */,
 				EB22DFDC2C30112F00EB0DDD /* ContentView.swift */,
 				EB22E00B2C3014B500EB0DDD /* Player.swift */,
+				EB22E0152C31AD3C00EB0DDD /* Point.swift */,
 				EB22E0112C30A1A400EB0DDD /* EndedSet.swift */,
 				EB22E00D2C30365300EB0DDD /* Match.swift */,
 				EB22DFDE2C30113200EB0DDD /* Assets.xcassets */,
@@ -146,7 +151,8 @@
 		EB22DFEA2C30113200EB0DDD /* SetPoint Watch AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				EB22DFEB2C30113200EB0DDD /* SetPoint_Watch_AppTests.swift */,
+				EB22E0132C31AB2200EB0DDD /* PlayerTests.swift */,
+				EB22DFEB2C30113200EB0DDD /* MatchTests.swift */,
 			);
 			path = "SetPoint Watch AppTests";
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			files = (
 				EB22DFDD2C30112F00EB0DDD /* ContentView.swift in Sources */,
 				EB22E00C2C3014B500EB0DDD /* Player.swift in Sources */,
+				EB22E0162C31AD3C00EB0DDD /* Point.swift in Sources */,
 				EB22DFDB2C30112F00EB0DDD /* SetPointApp.swift in Sources */,
 				EB22E00E2C30365300EB0DDD /* Match.swift in Sources */,
 				EB22E0122C30A1A400EB0DDD /* EndedSet.swift in Sources */,
@@ -334,7 +341,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB22DFEC2C30113200EB0DDD /* SetPoint_Watch_AppTests.swift in Sources */,
+				EB22E0142C31AB2200EB0DDD /* PlayerTests.swift in Sources */,
+				EB22DFEC2C30113200EB0DDD /* MatchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

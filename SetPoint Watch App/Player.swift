@@ -7,15 +7,6 @@
 
 import Foundation
 
-enum Point: Int, CaseIterable  {
-    case zero = 0
-    case fifteen = 1
-    case thirty = 2
-    case forthy = 3
-    case advantage = 4
-    case gameWon = 5
-}
-
 class Player {
     var points = 0
     var games: Int = 0

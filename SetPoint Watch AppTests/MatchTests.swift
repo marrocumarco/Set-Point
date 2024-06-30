@@ -1,5 +1,5 @@
 //
-//  SetPoint_Watch_AppTests.swift
+//  MatchTests.swift
 //  SetPoint Watch AppTests
 //
 //  Created by marrocumarco on 29/06/2024.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import SetPoint_Watch_App
 
-final class SetPoint_Watch_AppTests: XCTestCase {
+final class MatchTests: XCTestCase {
 
     var sut: Match!
 

@@ -29,6 +29,9 @@ class Match: ObservableObject {
         if isTiebreak {
             player.points += 1
             checkSetWin(for: player)
+            if (player.points + opponent.points) % 2 == 1 {
+                player1Serves.toggle()
+            }
         } else if player.points + 1 == Point.advantage.rawValue &&
                     opponent.points == Point.advantage.rawValue {
             // deuce: score reset to 40 all

@@ -26,6 +26,7 @@ final class MatchTests: XCTestCase {
         sut.isTiebreak = true
 
         sut.pointWonBy(player: sut.player1)
+        XCTAssertFalse(sut.player1Serves)
         XCTAssertEqual(sut.player1GameScoreDescription, "1")
     }
 

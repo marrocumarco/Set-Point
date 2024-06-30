@@ -28,18 +28,14 @@ class Match: ObservableObject {
         let opponent = player === player1 ? player2 : player1
         if isTiebreak {
             player.points += 1
-            calculatePointDescription(player)
-            calculatePointDescription(opponent)
             checkSetWin(for: player)
+        } else if player.points + 1 == Point.advantage.rawValue &&
+                    opponent.points == Point.advantage.rawValue {
+            // deuce: score reset to 40 all
+            opponent.points = Point.forthy.rawValue
         } else {
-            if player.points + 1 == Point.advantage.rawValue &&
-                opponent.points == Point.advantage.rawValue {
-                // deuce: score reset to 40 all
-                opponent.points = Point.forthy.rawValue
-            } else {
-                player.points = (player.points + 1) % 6
-                checkGameWin(for: player)
-            }
+            player.points = (player.points + 1) % 6
+            checkGameWin(for: player)
         }
 
         calculatePointDescription(player)
@@ -96,19 +92,18 @@ class Match: ObservableObject {
 
     func checkMatchWin(for player: Player) {
         if player.sets == 3 {
-            player.resetSets()
             player1.resetSets()
             player2.resetSets()
             showCurrentSetScore = false
         }
     }
 
-    private func calculatePointDescription(_ player: Player) {
+    internal func calculatePointDescription(_ player: Player) {
         var pointsDescription = ""
         if isTiebreak {
             pointsDescription = player.points.description
-        } else {
-            switch Point(rawValue: player.points) {
+        } else if let point = Point(rawValue: player.points) {
+            switch point {
             case .zero:
                 pointsDescription  = "0"
             case .fifteen:
@@ -121,8 +116,6 @@ class Match: ObservableObject {
                 pointsDescription  = "A"
             case .gameWon:
                 pointsDescription  = "W"
-            default:
-                pointsDescription  = ""
             }
         }
 

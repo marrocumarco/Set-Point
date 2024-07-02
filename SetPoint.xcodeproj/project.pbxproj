@@ -21,6 +21,7 @@
 		EB22E0122C30A1A400EB0DDD /* EndedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0112C30A1A400EB0DDD /* EndedSet.swift */; };
 		EB22E0142C31AB2200EB0DDD /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0132C31AB2200EB0DDD /* PlayerTests.swift */; };
 		EB22E0162C31AD3C00EB0DDD /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0152C31AD3C00EB0DDD /* Point.swift */; };
+		EB25C8C12C34A5C000DD597C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EB25C8C02C34A5C000DD597C /* Localizable.xcstrings */; };
 		EBB569602C341BF600B050EB /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB5695F2C341BF600B050EB /* SettingsViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		EB22E0112C30A1A400EB0DDD /* EndedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedSet.swift; sourceTree = "<group>"; };
 		EB22E0132C31AB2200EB0DDD /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 		EB22E0152C31AD3C00EB0DDD /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		EB25C8C02C34A5C000DD597C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		EBB5695F2C341BF600B050EB /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 				EBB5695F2C341BF600B050EB /* SettingsViewModel.swift */,
 				EB22DFDE2C30113200EB0DDD /* Assets.xcassets */,
 				EB22DFE02C30113200EB0DDD /* Preview Content */,
+				EB25C8C02C34A5C000DD597C /* Localizable.xcstrings */,
 			);
 			path = "SetPoint Watch App";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = EB22DFC82C30112F00EB0DDD;
 			packageReferences = (
@@ -310,6 +314,7 @@
 			files = (
 				EB22DFE22C30113200EB0DDD /* Preview Assets.xcassets in Resources */,
 				EB22DFDF2C30113200EB0DDD /* Assets.xcassets in Resources */,
+				EB25C8C12C34A5C000DD597C /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,7 +513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SetPoint Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 2RQMUPJ86Z;
 				ENABLE_PREVIEWS = YES;
@@ -538,7 +543,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SetPoint Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 2RQMUPJ86Z;
 				ENABLE_PREVIEWS = YES;

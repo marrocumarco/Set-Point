@@ -12,17 +12,20 @@ class Match: ObservableObject {
     var settings = SettingsViewModel()
     var player1: Player
     var player2: Player
-    var player1Serves = true
 
+    @Published var player1Serves = true
     @Published var endedSets = [EndedSet]()
     @Published var player1GameScoreDescription = Point.zero.rawValue.description
     @Published var player2GameScoreDescription = Point.zero.rawValue.description
     @Published var isTiebreak = false
     @Published var showCurrentSetScore = true
+    @Published var showEndedMatchAlert = false
 
+    var winner: Player?
     var isTiebreakEnabled = true
     var numberOfSetsNeededToWin = 3
     var cancellables = [AnyCancellable]()
+
     init(player1Name: String, player2Name: String) {
         self.player1 = Player(name: player1Name)
         self.player2 = Player(name: player2Name)
@@ -105,10 +108,28 @@ class Match: ObservableObject {
 
     func checkMatchWin(for player: Player) {
         if player.sets == numberOfSetsNeededToWin {
+            winner = player
             player1.resetSets()
             player2.resetSets()
             showCurrentSetScore = false
+            showEndedMatchAlert = true
         }
+    }
+
+    func resetMatch() {
+        player1.resetPoints()
+        player1.resetGames()
+        player1.resetSets()
+        player2.resetPoints()
+        player2.resetGames()
+        player2.resetSets()
+        endedSets.removeAll()
+        isTiebreak = false
+        showCurrentSetScore = true
+        showEndedMatchAlert = false
+        player1Serves = true
+        calculatePointDescription(player1)
+        calculatePointDescription(player2)
     }
 
     internal func calculatePointDescription(_ player: Player) {

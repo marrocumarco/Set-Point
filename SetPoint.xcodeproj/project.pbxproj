@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB07277A2C31F3B90092369F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0727792C31F3B90092369F /* SettingsView.swift */; };
 		EB22DFD62C30112F00EB0DDD /* SetPoint Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EB22DFD52C30112F00EB0DDD /* SetPoint Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EB22DFDB2C30112F00EB0DDD /* SetPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFDA2C30112F00EB0DDD /* SetPointApp.swift */; };
 		EB22DFDD2C30112F00EB0DDD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFDC2C30112F00EB0DDD /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 		EB22E0122C30A1A400EB0DDD /* EndedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0112C30A1A400EB0DDD /* EndedSet.swift */; };
 		EB22E0142C31AB2200EB0DDD /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0132C31AB2200EB0DDD /* PlayerTests.swift */; };
 		EB22E0162C31AD3C00EB0DDD /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0152C31AD3C00EB0DDD /* Point.swift */; };
+		EBB569602C341BF600B050EB /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB5695F2C341BF600B050EB /* SettingsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB0727792C31F3B90092369F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EB22DFCF2C30112F00EB0DDD /* SetPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB22DFD52C30112F00EB0DDD /* SetPoint Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SetPoint Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB22DFDA2C30112F00EB0DDD /* SetPointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPointApp.swift; sourceTree = "<group>"; };
@@ -77,6 +80,7 @@
 		EB22E0112C30A1A400EB0DDD /* EndedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedSet.swift; sourceTree = "<group>"; };
 		EB22E0132C31AB2200EB0DDD /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 		EB22E0152C31AD3C00EB0DDD /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		EBB5695F2C341BF600B050EB /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,10 +134,12 @@
 			children = (
 				EB22DFDA2C30112F00EB0DDD /* SetPointApp.swift */,
 				EB22DFDC2C30112F00EB0DDD /* ContentView.swift */,
+				EB0727792C31F3B90092369F /* SettingsView.swift */,
 				EB22E00B2C3014B500EB0DDD /* Player.swift */,
 				EB22E0152C31AD3C00EB0DDD /* Point.swift */,
 				EB22E0112C30A1A400EB0DDD /* EndedSet.swift */,
 				EB22E00D2C30365300EB0DDD /* Match.swift */,
+				EBB5695F2C341BF600B050EB /* SettingsViewModel.swift */,
 				EB22DFDE2C30113200EB0DDD /* Assets.xcassets */,
 				EB22DFE02C30113200EB0DDD /* Preview Content */,
 			);
@@ -328,12 +334,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB07277A2C31F3B90092369F /* SettingsView.swift in Sources */,
 				EB22DFDD2C30112F00EB0DDD /* ContentView.swift in Sources */,
 				EB22E00C2C3014B500EB0DDD /* Player.swift in Sources */,
 				EB22E0162C31AD3C00EB0DDD /* Point.swift in Sources */,
 				EB22DFDB2C30112F00EB0DDD /* SetPointApp.swift in Sources */,
 				EB22E00E2C30365300EB0DDD /* Match.swift in Sources */,
 				EB22E0122C30A1A400EB0DDD /* EndedSet.swift in Sources */,
+				EBB569602C341BF600B050EB /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,4 +3,175 @@
    uuid = "4429C2FF-628D-443A-80B6-7BDF1C853673"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3586EBA4-A5BB-4721-9C44-D16C436B3E97"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SetPoint Watch App/Match.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "init(player1Name:player2Name:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D243BD4-A0E1-40FB-951F-FF3E6BD30386"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SetPoint Watch App/SettingsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "tiebreakEnabled"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "6D243BD4-A0E1-40FB-951F-FF3E6BD30386 - 18c4f73b9a388828"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of SetPoint_Watch_App.SettingsViewModel.tiebreakEnabled : Swift.Bool"
+                  moduleName = "SetPoint Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcomarrocu/Projects/iOS/SetPoint/SetPoint%20Watch%20App/SettingsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "6D243BD4-A0E1-40FB-951F-FF3E6BD30386 - 1e13bba0b12adbc5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SetPoint_Watch_App.SettingsViewModel.tiebreakEnabled.getter : Swift.Bool"
+                  moduleName = "SetPoint Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcomarrocu/Projects/iOS/SetPoint/SetPoint%20Watch%20App/SettingsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "6D243BD4-A0E1-40FB-951F-FF3E6BD30386 - 97dcb40d2d2fe48d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SetPoint_Watch_App.SettingsViewModel.tiebreakEnabled.setter : Swift.Bool"
+                  moduleName = "SetPoint Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcomarrocu/Projects/iOS/SetPoint/SetPoint%20Watch%20App/SettingsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "6D243BD4-A0E1-40FB-951F-FF3E6BD30386 - 353129887160f77e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SetPoint_Watch_App.SettingsViewModel.tiebreakEnabled.modify : Swift.Bool"
+                  moduleName = "SetPoint Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcomarrocu/Projects/iOS/SetPoint/SetPoint%20Watch%20App/SettingsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "6D243BD4-A0E1-40FB-951F-FF3E6BD30386 - d8e67fcefd198040"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SetPoint_Watch_App.SettingsViewModel.tiebreakEnabled.modify : Swift.Bool with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "SetPoint Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcomarrocu/Projects/iOS/SetPoint/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "6D243BD4-A0E1-40FB-951F-FF3E6BD30386 - 5061ad0feae65f20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SetPoint_Watch_App.SettingsViewModel.$tiebreakEnabled.getter : Combine.Published&lt;Swift.Bool&gt;.Publisher"
+                  moduleName = "SetPoint Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcomarrocu/Projects/iOS/SetPoint/SetPoint%20Watch%20App/SettingsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "6D243BD4-A0E1-40FB-951F-FF3E6BD30386 - b219da8aefd0b5a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SetPoint_Watch_App.SettingsViewModel.$tiebreakEnabled.setter : Combine.Published&lt;Swift.Bool&gt;.Publisher"
+                  moduleName = "SetPoint Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcomarrocu/Projects/iOS/SetPoint/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "6D243BD4-A0E1-40FB-951F-FF3E6BD30386 - 5409f21e12ae3df7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SetPoint_Watch_App.SettingsViewModel.$tiebreakEnabled.modify : Combine.Published&lt;Swift.Bool&gt;.Publisher"
+                  moduleName = "SetPoint Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcomarrocu/Projects/iOS/SetPoint/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "6D243BD4-A0E1-40FB-951F-FF3E6BD30386 - 292fdb7ed6f8974d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SetPoint_Watch_App.SettingsViewModel.$tiebreakEnabled.modify : Combine.Published&lt;Swift.Bool&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "SetPoint Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcomarrocu/Projects/iOS/SetPoint/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

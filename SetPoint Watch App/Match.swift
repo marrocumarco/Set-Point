@@ -5,10 +5,11 @@
 //  Created by marrocumarco on 29/06/2024.
 //
 
-import Foundation
+import Combine
 
 class Match: ObservableObject {
 
+    var settings = SettingsViewModel()
     var player1: Player
     var player2: Player
     var player1Serves = true
@@ -19,14 +20,23 @@ class Match: ObservableObject {
     @Published var isTiebreak = false
     @Published var showCurrentSetScore = true
 
+    var isTiebreakEnabled = true
+    var numberOfSetsNeededToWin = 3
+    var cancellables = [AnyCancellable]()
     init(player1Name: String, player2Name: String) {
         self.player1 = Player(name: player1Name)
         self.player2 = Player(name: player2Name)
+        cancellables.append(settings.$tiebreakEnabled.sink {
+            self.isTiebreakEnabled = $0
+        })
+        cancellables.append(settings.$selectedNumberOfSets.sink {
+            self.numberOfSetsNeededToWin = ($0 / 2) + 1
+        })
     }
 
     func pointWonBy(player: Player) {
         let opponent = player === player1 ? player2 : player1
-        if isTiebreak {
+        if isTiebreakEnabled && isTiebreak {
             player.points += 1
             checkSetWin(for: player)
             if (player.points + opponent.points) % 2 == 1 {
@@ -61,7 +71,7 @@ class Match: ObservableObject {
     func checkSetWin(for player: Player) {
         let opponent = player === player1 ? player2 : player1
         var setWin = false
-        if isTiebreak {
+        if isTiebreakEnabled && isTiebreak {
             if player.points >= 7 && player.points >= opponent.points + 2 {
                 setWin = true
                 player.games += 1
@@ -85,7 +95,7 @@ class Match: ObservableObject {
             isTiebreak = false
             checkMatchWin(for: player)
         } else {
-            if !isTiebreak, player.games == 6 && opponent.games == 6 {
+            if isTiebreakEnabled && !isTiebreak && player.games == 6 && opponent.games == 6 {
                 isTiebreak = true
                 player.resetPoints()
                 opponent.resetPoints()
@@ -94,7 +104,7 @@ class Match: ObservableObject {
     }
 
     func checkMatchWin(for player: Player) {
-        if player.sets == 3 {
+        if player.sets == numberOfSetsNeededToWin {
             player1.resetSets()
             player2.resetSets()
             showCurrentSetScore = false

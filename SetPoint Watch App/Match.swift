@@ -20,6 +20,7 @@ class Match: ObservableObject {
     @Published var isTiebreak = false
     @Published var showCurrentSetScore = true
     @Published var showEndedMatchAlert = false
+    @Published var pointButtonsDisabled = false
 
     var winner: Player?
     var isTiebreakEnabled = true
@@ -113,6 +114,7 @@ class Match: ObservableObject {
             player2.resetSets()
             showCurrentSetScore = false
             showEndedMatchAlert = true
+            pointButtonsDisabled = true
         }
     }
 
@@ -127,6 +129,7 @@ class Match: ObservableObject {
         isTiebreak = false
         showCurrentSetScore = true
         showEndedMatchAlert = false
+        pointButtonsDisabled = false
         player1Serves = true
         calculatePointDescription(player1)
         calculatePointDescription(player2)

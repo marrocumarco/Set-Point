@@ -50,7 +50,7 @@ struct ContentView: View {
                         Button(match.player2GameScoreDescription) {
                             match.pointWonBy(player: match.player2)
                         }
-                    }.font(.title)
+                    }.font(.title).disabled(match.pointButtonsDisabled)
                     Spacer()
                 }
                 Spacer()

@@ -22,6 +22,7 @@
 		EB22E0142C31AB2200EB0DDD /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0132C31AB2200EB0DDD /* PlayerTests.swift */; };
 		EB22E0162C31AD3C00EB0DDD /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0152C31AD3C00EB0DDD /* Point.swift */; };
 		EB25C8C12C34A5C000DD597C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EB25C8C02C34A5C000DD597C /* Localizable.xcstrings */; };
+		EB4F97D72C37303900D21C71 /* SettingsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4F97D62C37303900D21C71 /* SettingsTest.swift */; };
 		EBB569602C341BF600B050EB /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB5695F2C341BF600B050EB /* SettingsViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		EB22E0132C31AB2200EB0DDD /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 		EB22E0152C31AD3C00EB0DDD /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		EB25C8C02C34A5C000DD597C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		EB4F97D62C37303900D21C71 /* SettingsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTest.swift; sourceTree = "<group>"; };
 		EBB5695F2C341BF600B050EB /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 		EB22DFEA2C30113200EB0DDD /* SetPoint Watch AppTests */ = {
 			isa = PBXGroup;
 			children = (
+				EB4F97D62C37303900D21C71 /* SettingsTest.swift */,
 				EB22E0132C31AB2200EB0DDD /* PlayerTests.swift */,
 				EB22DFEB2C30113200EB0DDD /* MatchTests.swift */,
 			);
@@ -355,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB22E0142C31AB2200EB0DDD /* PlayerTests.swift in Sources */,
+				EB4F97D72C37303900D21C71 /* SettingsTest.swift in Sources */,
 				EB22DFEC2C30113200EB0DDD /* MatchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

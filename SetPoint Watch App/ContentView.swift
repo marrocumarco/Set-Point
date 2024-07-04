@@ -45,12 +45,18 @@ struct ContentView: View {
                     Spacer()
                     VStack {
                         Button(match.player1GameScoreDescription) {
-                            match.pointWonBy(player: match.player1)
+                            withAnimation(.default) {
+                                match.pointWonBy(player: match.player1)
+                            }
                         }
                         Button(match.player2GameScoreDescription) {
-                            match.pointWonBy(player: match.player2)
+                            withAnimation(.default) {
+                                match.pointWonBy(player: match.player2)
+                            }
                         }
-                    }.font(.title).disabled(match.pointButtonsDisabled)
+                    }.font(.title)
+                        .contentTransition(.numericText())
+                        .disabled(match.pointButtonsDisabled)
                     Spacer()
                 }
                 Spacer()
@@ -70,7 +76,8 @@ struct ContentView: View {
                             Button("cancel", role: .cancel) {  }
                     }
                 }
-            }.alert("gameSetMatch \(match.winner?.name ?? "")", isPresented: $match.showEndedMatchAlert) {
+            }
+            .alert("gameSetMatch \(match.winner?.name ?? "")", isPresented: $match.showEndedMatchAlert) {
                 Button("Ok", role: .destructive) { match.resetMatch() }
                 Button("cancel", role: .cancel) {  }
             }
@@ -87,8 +94,9 @@ struct ScoreStack: View {
     var player2Score: String
     var body: some View {
         VStack {
+
             Text(player1Score)
             Text(player2Score)
-        }
+        }.contentTransition(.numericText())
     }
 }

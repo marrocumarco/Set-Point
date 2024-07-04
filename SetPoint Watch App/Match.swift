@@ -6,10 +6,11 @@
 //
 
 import Combine
+import Foundation
 
 class Match: ObservableObject {
 
-    var settings = SettingsViewModel()
+    var settings = SettingsViewModel(defaults: UserDefaults.standard)
     var player1: Player
     var player2: Player
 
@@ -35,6 +36,11 @@ class Match: ObservableObject {
         })
         cancellables.append(settings.$selectedNumberOfSets.sink {
             self.numberOfSetsNeededToWin = ($0 / 2) + 1
+        })
+        cancellables.append(settings.$requireMatchRestart.sink { [weak self] requireMatchRestart in
+            if requireMatchRestart {
+                self?.resetMatch()
+            }
         })
     }
 
@@ -110,8 +116,6 @@ class Match: ObservableObject {
     func checkMatchWin(for player: Player) {
         if player.sets == numberOfSetsNeededToWin {
             winner = player
-            player1.resetSets()
-            player2.resetSets()
             showCurrentSetScore = false
             showEndedMatchAlert = true
             pointButtonsDisabled = true

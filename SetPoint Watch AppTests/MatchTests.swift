@@ -90,9 +90,9 @@ final class MatchTests: XCTestCase {
     func test_checkSetWin_player1() {
         //given
         sut.player1.games = 6
-        
+        sut.isTiebreakEnabled = true
         sut.checkSetWin(for: sut.player1)
-
+        sut.numberOfSetsNeededToWin = 3
         XCTAssertEqual(sut.endedSets.count, 1)
         XCTAssertEqual(sut.endedSets.first!.id, 1)
         XCTAssertEqual(sut.endedSets.first!.player1Score, 6)
@@ -168,11 +168,11 @@ final class MatchTests: XCTestCase {
     func test_checkMatchWin() {
         //given
         sut.player1.sets = 3
-
+        sut.numberOfSetsNeededToWin = 3
         sut.checkMatchWin(for: sut.player1)
 
-        XCTAssertEqual(sut.player1.sets, 0)
-        XCTAssertEqual(sut.player2.sets, 0)
+        XCTAssert(sut.winner === sut.player1)
+        XCTAssert(sut.showEndedMatchAlert)
         XCTAssertEqual(sut.player1.games, 0)
         XCTAssertEqual(sut.player2.games, 0)
         XCTAssertEqual(sut.player1GameScoreDescription, "0")
@@ -192,5 +192,36 @@ final class MatchTests: XCTestCase {
 
             XCTAssertEqual(sut.player1GameScoreDescription, points.value)
         }
+    }
+
+    func test_resetMatch() {
+        //given
+        sut.isTiebreak = true
+        sut.endedSets.append(EndedSet(id: 1, player1Score: 6, player2Score: 4))
+        sut.showCurrentSetScore = false
+        sut.showEndedMatchAlert = true
+        sut.pointButtonsDisabled = true
+        sut.player1Serves = false
+        sut.player1.points = 3
+        sut.player1.games = 1
+        sut.player1.sets = 2
+        sut.player2.points = 3
+        sut.player2.games = 1
+        sut.player2.sets = 3
+
+        sut.resetMatch()
+
+       XCTAssertFalse(sut.isTiebreak)
+       XCTAssert(sut.endedSets.isEmpty)
+       XCTAssert(sut.showCurrentSetScore)
+       XCTAssertFalse(sut.showEndedMatchAlert)
+       XCTAssertFalse(sut.pointButtonsDisabled)
+       XCTAssert(sut.player1Serves)
+       XCTAssert(sut.player1.points == 0)
+       XCTAssert(sut.player1.games == 0)
+       XCTAssert(sut.player1.sets == 0)
+       XCTAssert(sut.player2.points == 0)
+       XCTAssert(sut.player2.games == 0)
+       XCTAssert(sut.player2.sets == 0)
     }
 }

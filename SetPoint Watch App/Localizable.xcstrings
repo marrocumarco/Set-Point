@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "cancel" : {
       "localizations" : {
         "en" : {
@@ -90,13 +93,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Are you sure you want to reset the scores?"
+            "value" : "Score will be reset, continue?"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sei sicuro di voler azzerare i punteggi? "
+            "value" : "Il punteggio verrà azzerato, continuare?"
           }
         }
       }
@@ -117,6 +120,33 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impostazioni"
+          }
+        }
+      }
+    },
+    "settingsAlert" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you want to save and reset the score?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vuoi salvare e azzerare il punteggio?"
+          }
+        }
+      }
+    },
+    "settingsAlertMessage" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Score will be reset, continue?"
           }
         }
       }

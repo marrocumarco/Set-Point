@@ -53,4 +53,50 @@ final class SettingsTest: XCTestCase {
 
         XCTAssertEqual(sut.selectedNumberOfSets, 5)
     }
+
+    func test_checkValuesChanges_true_tiebreak() {
+        sut.tiebreakEnabled = true
+
+        XCTAssert(sut.checkValuesChanged())
+    }
+
+    func test_checkValuesChanges_true_numberOfSets() {
+        sut.selectedNumberOfSets = 3
+
+        XCTAssert(sut.checkValuesChanged())
+    }
+
+    func test_checkValuesChanges_false() {
+        sut.selectedNumberOfSets = 1
+        sut.tiebreakEnabled = false
+
+        XCTAssertFalse(sut.checkValuesChanged())
+    }
+
+    func test_saveValues() {
+        sut.saveValues()
+
+        XCTAssert(sut.requireMatchRestart)
+    }
+
+    func test_discardValues() {
+        sut.selectedNumberOfSets = 3
+        sut.tiebreakEnabled = true
+
+        sut.discardValues()
+
+        XCTAssertEqual(sut.selectedNumberOfSets, 1)
+        XCTAssertFalse(sut.tiebreakEnabled)
+    }
+    
+    func test_discardValues_valuesNotFoundInDefaults() {
+        sut = SettingsViewModel(defaults: MockUserDefaults(valueFound: false))
+        sut.selectedNumberOfSets = 1
+        sut.tiebreakEnabled = false
+
+        sut.discardValues()
+
+        XCTAssertEqual(sut.selectedNumberOfSets, 3)
+        XCTAssert(sut.tiebreakEnabled)
+    }
 }

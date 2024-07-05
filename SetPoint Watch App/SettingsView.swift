@@ -38,7 +38,7 @@ struct SettingsView: View {
         }.toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("", systemImage: "chevron.backward") {
-                    if settingsViewModel.checkValues() {
+                    if !settingsViewModel.checkValuesChanged() {
                         dismiss()
                     }
                 }.foregroundStyle(.accent)

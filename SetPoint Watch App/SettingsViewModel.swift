@@ -31,13 +31,13 @@ class SettingsViewModel: ObservableObject {
         selectedNumberOfSets = numberOfSets
     }
 
-    func checkValues() -> Bool {
+    func checkValuesChanged() -> Bool {
         if tiebreakEnabled != defaults.object(forKey: "tiebreakEnabled") as? Bool ||
             selectedNumberOfSets != defaults.object(forKey: "numberOfSets") as? Int {
             showAlert = true
-            return false
+            return true
         }
-        return true
+        return false
     }
 
     func saveValues() {

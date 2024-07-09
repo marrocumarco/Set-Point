@@ -1,6 +1,6 @@
-# Set-Point - Tennis & Sports Scorekeeper
+# Set-Point - Tennis & Padel Scorekeeper
 
-Welcome to Set-Point! Set-Point is an intuitive and efficient scorekeeping app designed for tennis and similar sports. With Set-Point, you can easily track scores directly from your Apple Watch, ensuring you stay focused on the game.
+Welcome to Set-Point! Set-Point is an intuitive and efficient scorekeeping app designed for tennis, padel and similar sports. With Set-Point, you can easily track scores directly from your Apple Watch, ensuring you stay focused on the game.
 
 ## Features
 

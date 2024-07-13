@@ -18,6 +18,7 @@ Welcome to Set-Point! Set-Point is an intuitive and efficient scorekeeping app d
 
 1. Download from the App Store:
    - Tap the download button to install the app on your iPhone.
+
    [![App Store](./assets/images/app_store_logo.svg)](https://apps.apple.com/app/set-point/id6505079778)
    - The app will automatically sync to your Apple Watch.
 

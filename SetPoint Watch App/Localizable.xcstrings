@@ -140,17 +140,6 @@
         }
       }
     },
-    "settingsAlertMessage" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Score will be reset, continue?"
-          }
-        }
-      }
-    },
     "Tie-break" : {
       "localizations" : {
         "it" : {

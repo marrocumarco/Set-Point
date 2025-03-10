@@ -17,7 +17,7 @@
 		EB22DFF62C30113200EB0DDD /* SetPoint_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFF52C30113200EB0DDD /* SetPoint_Watch_AppUITests.swift */; };
 		EB22DFF82C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFF72C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift */; };
 		EB22E00C2C3014B500EB0DDD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E00B2C3014B500EB0DDD /* Player.swift */; };
-		EB22E00E2C30365300EB0DDD /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E00D2C30365300EB0DDD /* Match.swift */; };
+		EB22E00E2C30365300EB0DDD /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E00D2C30365300EB0DDD /* MatchViewModel.swift */; };
 		EB22E0122C30A1A400EB0DDD /* EndedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0112C30A1A400EB0DDD /* EndedSet.swift */; };
 		EB22E0142C31AB2200EB0DDD /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0132C31AB2200EB0DDD /* PlayerTests.swift */; };
 		EB22E0162C31AD3C00EB0DDD /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0152C31AD3C00EB0DDD /* Point.swift */; };
@@ -78,7 +78,7 @@
 		EB22DFF52C30113200EB0DDD /* SetPoint_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPoint_Watch_AppUITests.swift; sourceTree = "<group>"; };
 		EB22DFF72C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPoint_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EB22E00B2C3014B500EB0DDD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		EB22E00D2C30365300EB0DDD /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		EB22E00D2C30365300EB0DDD /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
 		EB22E0112C30A1A400EB0DDD /* EndedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedSet.swift; sourceTree = "<group>"; };
 		EB22E0132C31AB2200EB0DDD /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
 		EB22E0152C31AD3C00EB0DDD /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 				EB22E00B2C3014B500EB0DDD /* Player.swift */,
 				EB22E0152C31AD3C00EB0DDD /* Point.swift */,
 				EB22E0112C30A1A400EB0DDD /* EndedSet.swift */,
-				EB22E00D2C30365300EB0DDD /* Match.swift */,
+				EB22E00D2C30365300EB0DDD /* MatchViewModel.swift */,
 				EBB5695F2C341BF600B050EB /* SettingsViewModel.swift */,
 				EB22DFDE2C30113200EB0DDD /* Assets.xcassets */,
 				EB22DFE02C30113200EB0DDD /* Preview Content */,
@@ -347,7 +347,7 @@
 				EB22E00C2C3014B500EB0DDD /* Player.swift in Sources */,
 				EB22E0162C31AD3C00EB0DDD /* Point.swift in Sources */,
 				EB22DFDB2C30112F00EB0DDD /* SetPointApp.swift in Sources */,
-				EB22E00E2C30365300EB0DDD /* Match.swift in Sources */,
+				EB22E00E2C30365300EB0DDD /* MatchViewModel.swift in Sources */,
 				EB22E0122C30A1A400EB0DDD /* EndedSet.swift in Sources */,
 				EBB569602C341BF600B050EB /* SettingsViewModel.swift in Sources */,
 			);

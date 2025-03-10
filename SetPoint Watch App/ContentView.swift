@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var match: Match
+    @ObservedObject var match: MatchViewModel
     @State var showRestartAlert = false
 
     var body: some View {
@@ -86,7 +86,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(match: Match(player1Name: "1", player2Name: "2"))
+    ContentView(match: MatchViewModel(player1Name: "1", player2Name: "2"))
 }
 
 struct ScoreStack: View {

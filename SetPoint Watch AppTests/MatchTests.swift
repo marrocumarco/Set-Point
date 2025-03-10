@@ -10,10 +10,10 @@ import XCTest
 
 final class MatchTests: XCTestCase {
 
-    var sut: Match!
+    var sut: MatchViewModel!
 
     override func setUpWithError() throws {
-        sut = Match(player1Name: "Player 1", player2Name: "Player 2")
+        sut = MatchViewModel(player1Name: "Player 1", player2Name: "Player 2")
     }
 
     override func tearDownWithError() throws {

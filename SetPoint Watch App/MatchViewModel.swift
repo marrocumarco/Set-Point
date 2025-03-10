@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-class Match: ObservableObject {
+class MatchViewModel: ObservableObject {
 
     var settings = SettingsViewModel(defaults: UserDefaults.standard)
     var player1: Player

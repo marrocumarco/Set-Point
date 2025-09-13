@@ -28,10 +28,11 @@ jobs:
         env:
           scheme: ${{ 'default' }}
           platform: ${{ 'watchOS Simulator' }}
-          device: ${{ 'device' }}
+          device: ${{ 'device_file' }}
         run: |
           OS="11.5"
           if [ $scheme = default ]; then scheme=$(cat default); fi
+          if [ $device = device_file ]; then device=$(cat device_file); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           echo "Building scheme: $scheme on device: $device"
@@ -45,6 +46,7 @@ jobs:
         run: |
           OS="11.5"
           if [ $scheme = default ]; then scheme=$(cat default); fi
+          if [ $device = device_file ]; then device=$(cat device_file); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           echo "Testing scheme: $scheme on device: $device"

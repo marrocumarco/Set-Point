@@ -59,3 +59,4 @@ jobs:
             -destination "id=$UUID" \
             -derivedDataPath "$PWD/DerivedData" \
             -enableCodeCoverage YES
+            -skipPackagePluginValidation

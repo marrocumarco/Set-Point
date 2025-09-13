@@ -30,9 +30,6 @@ jobs:
       - name: Build (watchOS)
         env:
           scheme: ${{ 'default' }}
-          platform: ${{ 'watchOS Simulator' }}
-          device: ${{ 'device_file' }}
-          arch: ${{ 'arch_file' }}
         run: |
           # trova un Apple Watch simulator preferendo la versione OS richiesta ($OS), altrimenti il primo disponibile
           OS=${OS:-11.5}   # fallback se $OS non è impostata

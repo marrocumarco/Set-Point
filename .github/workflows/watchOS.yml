@@ -18,6 +18,7 @@ jobs:
       - name: Set Scheme
         run: |
           default="SetPoint Watch App"
+          echo $default | cat >default
           echo Using scheme: $default
 
       - name: Build (watchOS)

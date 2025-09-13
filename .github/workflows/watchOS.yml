@@ -19,15 +19,18 @@ jobs:
         run: |
           default="SetPoint Watch App"
           echo $default | cat >default
+          device="Apple Watch SE (40mm) (2nd generation)"
+          echo $device | cat >device
           echo Using scheme: $default
-
+          echo Using device: $device
+          
       - name: Build (watchOS)
         env:
           scheme: ${{ 'default' }}
           platform: ${{ 'watchOS Simulator' }}
+          device: ${{ 'device' }}
         run: |
           OS="11.5"
-          device=`xcrun xctrace list devices 2>&1 | grep -oE 'Apple Watch.*[^\(]+' | head -1 | awk '{$1=$1;print}'`
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
@@ -38,9 +41,9 @@ jobs:
         env:
           scheme: ${{ 'default' }}
           platform: ${{ 'watchOS Simulator' }}
+          device: ${{ 'device' }}
         run: |
           OS="11.5"
-          device=`xcrun xctrace list devices 2>&1 | grep -oE 'Apple Watch.*[^\(]+' | head -1 | awk '{$1=$1;print}'`
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`

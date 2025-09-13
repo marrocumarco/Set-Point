@@ -5,6 +5,7 @@ on:
     branches: [ "**" ]
   pull_request:
     branches: [ "**" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -15,59 +16,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set Scheme
+      - name: Select Scheme & Simulator
         run: |
-          default="SetPoint Watch App"
-          echo $default | cat >default
-          device="Apple Watch SE (40mm) (2nd generation)"
-          echo $device | cat >device_file
-          arch="arm64"
-          echo $arch | cat >arch_file
-          echo Using scheme: $default
-          echo Using device: $device
-          echo Using arch: $arch
+          # scheme esplicito (deve essere Shared in Xcode)
+          echo "SCHEME=SetPoint Watch App" >> $GITHUB_ENV
           
-      - name: Build (watchOS)
-        env:
-          scheme: ${{ 'default' }}
-        run: |
-          # trova un Apple Watch simulator preferendo la versione OS richiesta ($OS), altrimenti il primo disponibile
-          OS=${OS:-11.5}   # fallback se $OS non è impostata
-          uuid=$(xcrun simctl list devices | grep -E "Apple Watch.*\($OS\)" | head -n1 | grep -oE '[0-9A-F-]{36}')
+          # cerca un simulatore Apple Watch SE (40mm) con OS 11.5
+          uuid=$(xcrun simctl list devices | grep "Apple Watch SE (40mm) (2nd generation) (11.5)" | grep -oE '[0-9A-F-]{36}' | head -1)
           if [ -z "$uuid" ]; then
-            uuid=$(xcrun simctl list devices | grep -E "Apple Watch" | head -n1 | grep -oE '[0-9A-F-]{36}')
-          fi
-
-          if [ -z "$uuid" ]; then
-            echo "Nessun simulatore Apple Watch trovato!"
-            xcrun xctrace list devices
+            echo "❌ Nessun simulatore Apple Watch trovato"
+            xcrun simctl list devices
             exit 1
           fi
+          echo "UUID=$uuid" >> $GITHUB_ENV
+          echo "Trovato simulatore con id: $uuid"
 
-          echo "Using simulator id: $uuid"
-          DERIVED_DATA="$PWD/DerivedData"
-          mkdir -p "$DERIVED_DATA"
+      - name: Build & Test (watchOS)
+        run: |
+          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
+          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
+
+          mkdir -p "$PWD/DerivedData"
+
+          echo "▶️ Building & testing scheme: $SCHEME on simulator id: $UUID"
 
           xcodebuild test \
-          -scheme "$scheme" \
-          -"$filetype_parameter" "$file_to_build" \
-          -sdk watchsimulator \
-          -destination "id=$uuid" \
-          -derivedDataPath "$DERIVED_DATA" \
-          -enableCodeCoverage YES
-
-      #- name: Test (watchOS)
-      #  env:
-      #    scheme: ${{ 'default' }}
-      #    platform: ${{ 'watchOS Simulator' }}
-      #    device: ${{ 'device' }}
-      #    arch: ${{ 'arch_file' }}
-      #  run: |
-      #    OS="11.5"
-      #    if [ $scheme = default ]; then scheme=$(cat default); fi
-      #    if [ $device = device_file ]; then device=$(cat device_file); fi
-      #    if [ $arch = arch_file ]; then arch=$(cat arch_file); fi
-      #    if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-      #    file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-      #    echo "Testing scheme: $scheme on device: $device"
-      #    xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device,OS=$OS,arch=$arch"
+            -scheme "$SCHEME" \
+            -"$filetype_parameter" "$file_to_build" \
+            -sdk watchsimulator \
+            -destination "id=$UUID" \
+            -derivedDataPath "$PWD/DerivedData" \
+            -enableCodeCoverage YES

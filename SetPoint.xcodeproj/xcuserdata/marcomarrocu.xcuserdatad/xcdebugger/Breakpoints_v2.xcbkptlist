@@ -34,38 +34,6 @@
             endingLineNumber = "82"
             landmarkName = "checkSetWin(for:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "AFAC079B-D885-499F-86DC-A38D73557BB4 - 93c917206aeff9c0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SetPoint_Watch_App.Match.checkSetWin(for: SetPoint_Watch_App.Player) -&gt; ()"
-                  moduleName = "SetPoint Watch App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marcomarrocu/Projects/iOS/SetPoint/SetPoint%20Watch%20App/Match.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "AFAC079B-D885-499F-86DC-A38D73557BB4 - 93c917206aeff821"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SetPoint_Watch_App.Match.checkSetWin(for: SetPoint_Watch_App.Player) -&gt; ()"
-                  moduleName = "SetPoint Watch App"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/marcomarrocu/Projects/iOS/SetPoint/SetPoint%20Watch%20App/Match.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

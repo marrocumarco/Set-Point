@@ -14,8 +14,8 @@
 		EB22DFDF2C30113200EB0DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB22DFDE2C30113200EB0DDD /* Assets.xcassets */; };
 		EB22DFE22C30113200EB0DDD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB22DFE12C30113200EB0DDD /* Preview Assets.xcassets */; };
 		EB22DFEC2C30113200EB0DDD /* MatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFEB2C30113200EB0DDD /* MatchTests.swift */; };
-		EB22DFF62C30113200EB0DDD /* SetPoint_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFF52C30113200EB0DDD /* SetPoint_Watch_AppUITests.swift */; };
-		EB22DFF82C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFF72C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift */; };
+		EB22DFF62C30113200EB0DDD /* SetPointWatchAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFF52C30113200EB0DDD /* SetPointWatchAppUITests.swift */; };
+		EB22DFF82C30113200EB0DDD /* SetPointWatchAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22DFF72C30113200EB0DDD /* SetPointWatchAppUITestsLaunchTests.swift */; };
 		EB22E00C2C3014B500EB0DDD /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E00B2C3014B500EB0DDD /* Player.swift */; };
 		EB22E00E2C30365300EB0DDD /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E00D2C30365300EB0DDD /* Match.swift */; };
 		EB22E0122C30A1A400EB0DDD /* EndedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB22E0112C30A1A400EB0DDD /* EndedSet.swift */; };
@@ -75,8 +75,8 @@
 		EB22DFE72C30113200EB0DDD /* SetPoint Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SetPoint Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB22DFEB2C30113200EB0DDD /* MatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTests.swift; sourceTree = "<group>"; };
 		EB22DFF12C30113200EB0DDD /* SetPoint Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SetPoint Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB22DFF52C30113200EB0DDD /* SetPoint_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPoint_Watch_AppUITests.swift; sourceTree = "<group>"; };
-		EB22DFF72C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPoint_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EB22DFF52C30113200EB0DDD /* SetPointWatchAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPointWatchAppUITests.swift; sourceTree = "<group>"; };
+		EB22DFF72C30113200EB0DDD /* SetPointWatchAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPointWatchAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EB22E00B2C3014B500EB0DDD /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		EB22E00D2C30365300EB0DDD /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		EB22E0112C30A1A400EB0DDD /* EndedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndedSet.swift; sourceTree = "<group>"; };
@@ -172,8 +172,8 @@
 		EB22DFF42C30113200EB0DDD /* SetPoint Watch AppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				EB22DFF52C30113200EB0DDD /* SetPoint_Watch_AppUITests.swift */,
-				EB22DFF72C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift */,
+				EB22DFF52C30113200EB0DDD /* SetPointWatchAppUITests.swift */,
+				EB22DFF72C30113200EB0DDD /* SetPointWatchAppUITestsLaunchTests.swift */,
 			);
 			path = "SetPoint Watch AppUITests";
 			sourceTree = "<group>";
@@ -205,11 +205,11 @@
 				EB22DFD12C30112F00EB0DDD /* Sources */,
 				EB22DFD22C30112F00EB0DDD /* Frameworks */,
 				EB22DFD32C30112F00EB0DDD /* Resources */,
+				EB8033512E75C8E700E8E794 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EB22E0102C3086FC00EB0DDD /* PBXTargetDependency */,
 			);
 			name = "SetPoint Watch App";
 			productName = "SetPoint Watch App";
@@ -289,7 +289,6 @@
 			);
 			mainGroup = EB22DFC82C30112F00EB0DDD;
 			packageReferences = (
-				EB22E0082C30138700EB0DDD /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = EB22DFD02C30112F00EB0DDD /* Products */;
 			projectDirPath = "";
@@ -337,6 +336,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EB8033512E75C8E700E8E794 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -z \"$CI\" ]; then\n  if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EB22DFD12C30112F00EB0DDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -367,8 +387,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB22DFF82C30113200EB0DDD /* SetPoint_Watch_AppUITestsLaunchTests.swift in Sources */,
-				EB22DFF62C30113200EB0DDD /* SetPoint_Watch_AppUITests.swift in Sources */,
+				EB22DFF82C30113200EB0DDD /* SetPointWatchAppUITestsLaunchTests.swift in Sources */,
+				EB22DFF62C30113200EB0DDD /* SetPointWatchAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,10 +409,6 @@
 			isa = PBXTargetDependency;
 			target = EB22DFD42C30112F00EB0DDD /* SetPoint Watch App */;
 			targetProxy = EB22DFF22C30113200EB0DDD /* PBXContainerItemProxy */;
-		};
-		EB22E0102C3086FC00EB0DDD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = EB22E00F2C3086FC00EB0DDD /* SwiftLintBuildToolPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -521,6 +537,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SetPoint Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 2RQMUPJ86Z;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = SetPoint;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -551,6 +568,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SetPoint Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 2RQMUPJ86Z;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = SetPoint;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -738,25 +756,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		EB22E0082C30138700EB0DDD /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/SwiftLint.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.55.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		EB22E00F2C3086FC00EB0DDD /* SwiftLintBuildToolPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EB22E0082C30138700EB0DDD /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = "plugin:SwiftLintBuildToolPlugin";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EB22DFC92C30112F00EB0DDD /* Project object */;
 }

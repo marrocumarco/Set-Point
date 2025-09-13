@@ -34,14 +34,30 @@ jobs:
           device: ${{ 'device_file' }}
           arch: ${{ 'arch_file' }}
         run: |
-          OS="11.5"
-          if [ $scheme = default ]; then scheme=$(cat default); fi
-          if [ $device = device_file ]; then device=$(cat device_file); fi
-          if [ $arch = arch_file ]; then arch=$(cat arch_file); fi
-          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
-          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          echo "Building scheme: $scheme on device: $device"
-          xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device,OS=$OS,arch=$arch"
+          # trova un Apple Watch simulator preferendo la versione OS richiesta ($OS), altrimenti il primo disponibile
+          OS=${OS:-11.5}   # fallback se $OS non è impostata
+          uuid=$(xcrun simctl list devices | grep -E "Apple Watch.*\($OS\)" | head -n1 | grep -oE '[0-9A-F-]{36}')
+          if [ -z "$uuid" ]; then
+            uuid=$(xcrun simctl list devices | grep -E "Apple Watch" | head -n1 | grep -oE '[0-9A-F-]{36}')
+          fi
+
+          if [ -z "$uuid" ]; then
+            echo "Nessun simulatore Apple Watch trovato!"
+            xcrun xctrace list devices
+            exit 1
+          fi
+
+          echo "Using simulator id: $uuid"
+          DERIVED_DATA="$PWD/DerivedData"
+          mkdir -p "$DERIVED_DATA"
+
+          xcodebuild test \
+          -scheme "$scheme" \
+          -"$filetype_parameter" "$file_to_build" \
+          -sdk watchsimulator \
+          -destination "id=$uuid" \
+          -derivedDataPath "$DERIVED_DATA" \
+          -enableCodeCoverage YES
 
       #- name: Test (watchOS)
       #  env:

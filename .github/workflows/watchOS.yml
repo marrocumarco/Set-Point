@@ -1,0 +1,62 @@
+name: watchOS build & test
+
+on:
+  push:
+    branches: [ "**" ]
+  pull_request:
+    branches: [ "**" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and Test watchOS app
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Scheme & Simulator
+        run: |
+          # Usa lo scheme esatto del progetto (deve essere Shared in Xcode)
+          echo "SCHEME=SetPoint Watch App" >> $GITHUB_ENV
+
+          echo "📋 Simulatori disponibili:"
+          xcrun simctl list devices
+
+          # Estrai UUID del primo Apple Watch SE (40mm) (2nd generation) sotto watchOS 11.5
+          uuid=$(xcrun simctl list devices \
+            | awk '/-- watchOS 11\.5 --/{flag=1;next}/--/{flag=0}flag' \
+            | grep "Apple Watch SE (40mm) (2nd generation)" \
+            | head -1 \
+            | grep -oE '[0-9A-F-]{36}')
+
+          if [ -z "$uuid" ]; then
+            echo "❌ Nessun simulatore Apple Watch trovato"
+            exit 1
+          fi
+
+          echo "UUID=$uuid" >> $GITHUB_ENV
+          echo "✅ Trovato simulatore Apple Watch con id: $uuid"
+
+      - name: Build & Test (watchOS)
+        run: |
+          if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then \
+            filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; \
+          else \
+            filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; \
+          fi
+          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
+
+          mkdir -p "$PWD/DerivedData"
+
+          echo "▶️ Building & testing scheme: $SCHEME on simulator id: $UUID"
+
+          xcodebuild test \
+            -scheme "$SCHEME" \
+            -"$filetype_parameter" "$file_to_build" \
+            -sdk watchsimulator \
+            -destination "id=$UUID" \
+            -derivedDataPath "$PWD/DerivedData" \
+            -enableCodeCoverage YES
+            -skipPackagePluginValidation

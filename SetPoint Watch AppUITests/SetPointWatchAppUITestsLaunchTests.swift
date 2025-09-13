@@ -1,5 +1,5 @@
 //
-//  SetPoint_Watch_AppUITestsLaunchTests.swift
+//  SetPointWatchAppUITestsLaunchTests.swift
 //  SetPoint Watch AppUITests
 //
 //  Created by marrocumarco on 29/06/2024.
@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class SetPoint_Watch_AppUITestsLaunchTests: XCTestCase {
+final class SetPointWatchAppUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

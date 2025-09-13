@@ -21,33 +21,40 @@ jobs:
           echo $default | cat >default
           device="Apple Watch SE (40mm) (2nd generation)"
           echo $device | cat >device_file
+          arch="arm64"
+          echo $arch | cat >arch_file
           echo Using scheme: $default
           echo Using device: $device
+          echo Using arch: $arch
           
       - name: Build (watchOS)
         env:
           scheme: ${{ 'default' }}
           platform: ${{ 'watchOS Simulator' }}
           device: ${{ 'device_file' }}
+          arch: ${{ 'arch_file' }}
         run: |
           OS="11.5"
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ $device = device_file ]; then device=$(cat device_file); fi
+          if [ $arch = arch_file ]; then arch=$(cat arch_file); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           echo "Building scheme: $scheme on device: $device"
-          xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device,OS=$OS"
+          xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device,OS=$OS,arch=$arch"
 
       - name: Test (watchOS)
         env:
           scheme: ${{ 'default' }}
           platform: ${{ 'watchOS Simulator' }}
           device: ${{ 'device' }}
+          arch: ${{ 'arch_file' }}
         run: |
           OS="11.5"
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ $device = device_file ]; then device=$(cat device_file); fi
+          if [ $arch = arch_file ]; then arch=$(cat arch_file); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
           file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
           echo "Testing scheme: $scheme on device: $device"
-          xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device,OS=$OS"
+          xcodebuild test-without-building -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device,OS=$OS,arch=$arch"

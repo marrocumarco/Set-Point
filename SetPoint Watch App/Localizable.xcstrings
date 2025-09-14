@@ -1,10 +1,8 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-
-    },
     "cancel" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -20,7 +18,23 @@
         }
       }
     },
+    "confirm_match_reset" : {
+
+    },
+    "confirm_settings" : {
+
+    },
+    "confirm_tile" : {
+
+    },
+    "ended_match" : {
+
+    },
+    "games" : {
+
+    },
     "gameSetMatch %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -36,7 +50,11 @@
         }
       }
     },
+    "no" : {
+
+    },
     "NumberOfSets" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -53,6 +71,7 @@
       }
     },
     "Ok" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -69,6 +88,7 @@
       }
     },
     "P1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -79,6 +99,7 @@
       }
     },
     "P2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -88,7 +109,14 @@
         }
       }
     },
+    "player1" : {
+
+    },
+    "player2" : {
+
+    },
     "resetAlert" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -105,6 +133,7 @@
       }
     },
     "Restart" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -114,7 +143,11 @@
         }
       }
     },
+    "sets" : {
+
+    },
     "Settings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -124,7 +157,11 @@
         }
       }
     },
+    "settings_title" : {
+
+    },
     "settingsAlert" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -141,6 +178,7 @@
       }
     },
     "Tie-break" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -149,6 +187,18 @@
           }
         }
       }
+    },
+    "tiebreak" : {
+
+    },
+    "TODO" : {
+
+    },
+    "TODO settings" : {
+
+    },
+    "yes" : {
+
     }
   },
   "version" : "1.0"

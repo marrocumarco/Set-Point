@@ -11,7 +11,7 @@ import SwiftUI
 struct SetPointWatchApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(match: MatchViewModel(player1Name: "Player 1", player2Name: "Player 2"))
+            ContentView()
         }
     }
 }

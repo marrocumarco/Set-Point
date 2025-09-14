@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct EndedSet: Identifiable {
-    let id: Int
+struct EndedSet: Hashable, Identifiable {
+    var id: Int { hashValue }
     let player1Score: Int
     let player2Score: Int
 }

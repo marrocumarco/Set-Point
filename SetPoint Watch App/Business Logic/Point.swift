@@ -7,11 +7,10 @@
 
 import Foundation
 
-enum Point: Int, CaseIterable {
-    case zero = 0
-    case fifteen = 1
-    case thirty = 2
-    case forthy = 3
-    case advantage = 4
-    case gameWon = 5
+internal enum Point: Int {
+    case ZERO = 0
+    case FIFTEEN = 1
+    case THIRTY = 2
+    case FORTY = 3
+    case ADVANTAGE = 4
 }

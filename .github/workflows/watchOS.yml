@@ -55,5 +55,5 @@ jobs:
             -sdk watchsimulator \
             -destination "id=$UUID" \
             -derivedDataPath "$PWD/DerivedData" \
-            -enableCodeCoverage YES
+            -enableCodeCoverage YES \
             -skipPackagePluginValidation

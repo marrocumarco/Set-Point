@@ -2,9 +2,9 @@ name: watchOS build & test
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "**" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "**" ]
   workflow_dispatch:
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
       - name: Select Scheme & Simulator
         run: |
           echo "SCHEME=SetPoint Watch App-CI" >> $GITHUB_ENV
-          echo "📋 Simulatori disponibili:"
+          echo "Simulatori disponibili:"
           xcrun simctl list devices
           # Estrai UUID del primo Apple Watch SE (40mm) (2nd generation) disponibile
           uuid=$(xcrun simctl list devices \

@@ -20,24 +20,19 @@ jobs:
           xcode-version: '15.4'
       - name: Select Scheme & Simulator
         run: |
-          # Usa lo scheme esatto del progetto (deve essere Shared in Xcode)
           echo "SCHEME=SetPoint Watch App" >> $GITHUB_ENV
-
           echo "📋 Simulatori disponibili:"
           xcrun simctl list devices
-
-          # Estrai UUID del primo Apple Watch SE (40mm) (2nd generation) sotto watchOS 11.5
+          # Estrai UUID del primo Apple Watch SE (40mm) (2nd generation) disponibile
           uuid=$(xcrun simctl list devices \
-            | awk '/-- watchOS 11\.5 --/{flag=1;next}/--/{flag=0}flag' \
+            | awk '/-- watchOS/{flag=1;next}/--/{flag=0}flag' \
             | grep "Apple Watch SE (40mm) (2nd generation)" \
             | head -1 \
             | grep -oE '[0-9A-F-]{36}')
-
           if [ -z "$uuid" ]; then
             echo "❌ Nessun simulatore Apple Watch trovato"
             exit 1
           fi
-
           echo "UUID=$uuid" >> $GITHUB_ENV
           echo "✅ Trovato simulatore Apple Watch con id: $uuid"
 

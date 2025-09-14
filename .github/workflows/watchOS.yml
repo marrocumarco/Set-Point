@@ -57,3 +57,4 @@ jobs:
             -derivedDataPath "$PWD/DerivedData" \
             -enableCodeCoverage YES
             -skipPackagePluginValidation
+            -only-testing:"SetPoint Watch AppTests"

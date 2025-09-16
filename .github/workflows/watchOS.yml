@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Select Scheme & Simulator
         run: |
-          echo "SCHEME=SetPoint Watch App-CI" >> $GITHUB_ENV
+          echo "SCHEME=SetPoint Watch App" >> $GITHUB_ENV
           echo "Simulatori disponibili:"
           xcrun simctl list devices
           # Estrai UUID del primo Apple Watch SE (40mm) (2nd generation) disponibile

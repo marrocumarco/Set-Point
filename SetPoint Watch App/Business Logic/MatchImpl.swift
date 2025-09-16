@@ -9,7 +9,7 @@ import Foundation
 
 internal class MatchImpl: Match {
 
-    let settings: Settings
+    let settings: any Settings
 
     private var playerScore1 = PlayerScore("P1")
     private var playerScore2 = PlayerScore("P2")
@@ -32,7 +32,7 @@ internal class MatchImpl: Match {
     private var numberOfSetsNeededToWin: Int { (settings.getSelectedNumberOfSets() / 2) + 1 }
     var canUndo: Bool { !statesStack.isEmpty }
 
-    init(settings: Settings) {
+    init(settings: any Settings) {
         self.settings = settings
     }
 

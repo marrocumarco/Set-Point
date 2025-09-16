@@ -9,10 +9,10 @@ import Foundation
 
 internal class MatchUseCase {
 
-    private let match: Match
-    private let localizationRepository: LocalizationRepository
+    private let match: any Match
+    private let localizationRepository: any LocalizationRepository
 
-    init(match: Match, localizationRepository: LocalizationRepository) {
+    init(match: any Match, localizationRepository: any LocalizationRepository) {
         self.match = match
         self.localizationRepository = localizationRepository
     }

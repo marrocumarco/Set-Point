@@ -9,9 +9,9 @@ import Foundation
 
 internal class SettingsUseCase {
 
-    private let settings: Settings
-    private let dataAccess: DataAccess
-    private let localizationRepository: LocalizationRepository
+    private let settings: any Settings
+    private let dataAccess: any DataAccess
+    private let localizationRepository: any LocalizationRepository
 
     var settingsTitle: String {
         localizationRepository.getSettingsTitle()
@@ -29,9 +29,9 @@ internal class SettingsUseCase {
         localizationRepository.getConfirmTileText()
     }
 
-    init(settings: Settings,
-         dataAccess: DataAccess,
-         localizationRepository: LocalizationRepository) throws {
+    init(settings: any Settings,
+         dataAccess: any DataAccess,
+         localizationRepository: any LocalizationRepository) throws {
         self.settings = settings
         self.dataAccess = dataAccess
         self.localizationRepository = localizationRepository

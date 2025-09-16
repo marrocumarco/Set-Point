@@ -7,6 +7,7 @@
 
 import XCTest
 
+@MainActor
 final class SetPointWatchAppUITests: XCTestCase {
 
     override func setUpWithError() throws {

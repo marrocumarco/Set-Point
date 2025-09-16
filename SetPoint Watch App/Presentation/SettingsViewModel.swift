@@ -7,6 +7,7 @@
 
 import Foundation
 
-class SettingsViewModel: ObservableObject {
+@Observable
+class SettingsViewModel {
 
 }

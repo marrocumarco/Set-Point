@@ -8,5 +8,6 @@
 import Combine
 import Foundation
 
-class MatchViewModel: ObservableObject {
+@Observable
+class MatchViewModel {
 }

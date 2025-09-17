@@ -10,4 +10,10 @@ import Foundation
 
 @Observable
 class MatchViewModel {
+
+    internal init(matchUseCase: any MatchUseCase) {
+        self.matchUseCase = matchUseCase
+    }
+    
+    let matchUseCase: any MatchUseCase
 }

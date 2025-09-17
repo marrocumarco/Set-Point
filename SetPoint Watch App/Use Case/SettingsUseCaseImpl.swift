@@ -1,5 +1,5 @@
 //
-//  SettingsUseCase.swift
+//  SettingsUseCaseImpl.swift
 //  SetPoint Watch App
 //
 //  Created by marrocumarco on 14/09/2025.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal class SettingsUseCase {
+internal class SettingsUseCaseImpl {
 
     private let settings: any Settings
     private let dataAccess: any DataAccess

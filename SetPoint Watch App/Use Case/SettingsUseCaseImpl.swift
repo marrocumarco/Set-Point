@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal class SettingsUseCaseImpl {
+internal class SettingsUseCaseImpl: SettingsUseCase {
 
     private let settings: any Settings
     private let dataAccess: any DataAccess

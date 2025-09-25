@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal class MatchUseCaseImpl {
+internal class MatchUseCaseImpl: MatchUseCase {
 
     private let match: any Match
     private let localizationRepository: any LocalizationRepository

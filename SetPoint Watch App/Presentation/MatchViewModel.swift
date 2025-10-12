@@ -41,15 +41,23 @@ class MatchViewModel {
 
     func player1Scored() {
         Task {
-            await matchUseCase.pointWonByPlayerOne()
-            updateView()
+            do {
+                try await matchUseCase.pointWonByPlayerOne()
+                updateView()
+            } catch {
+                print(error)
+            }
         }
     }
 
     func player2Scored() {
         Task {
-            await matchUseCase.pointWonByPlayerTwo()
-            updateView()
+            do {
+                try await matchUseCase.pointWonByPlayerTwo()
+                updateView()
+            } catch {
+                print(error)
+            }
         }
     }
 
@@ -60,9 +68,7 @@ class MatchViewModel {
         }
     }
 
-    func openSettings() {
-        
-    }
+    func openSettings() {}
 
     private func updateView() {
         player1Name = matchUseCase.player1Name

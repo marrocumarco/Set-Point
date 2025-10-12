@@ -9,8 +9,8 @@ import Foundation
 
 protocol Match {
     func resetMatch() async
-    func pointWonByPlayerOne() async
-    func pointWonByPlayerTwo() async
+    func pointWonByPlayerOne() async throws
+    func pointWonByPlayerTwo() async throws
 
     func undo() async throws
 

@@ -82,13 +82,13 @@ final class MatchUseCaseTest: XCTestCase {
         XCTAssertTrue(matchUseCase.player1Serves)
     }
 
-    func test_pointWonByPlayerOne() async {
-        await matchUseCase.pointWonByPlayerOne()
+    func test_pointWonByPlayerOne() async throws {
+        try await matchUseCase.pointWonByPlayerOne()
         XCTAssertTrue((match as? MockMatch)?.pointWonByPlayerOneCalled ?? false)
     }
 
-    func test_pointWonByPlayerTwo() async {
-        await matchUseCase.pointWonByPlayerTwo()
+    func test_pointWonByPlayerTwo() async throws {
+        try await matchUseCase.pointWonByPlayerTwo()
         XCTAssertTrue((match as? MockMatch)?.pointWonByPlayerTwoCalled ?? false)
     }
 

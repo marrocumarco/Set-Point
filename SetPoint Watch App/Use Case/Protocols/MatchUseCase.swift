@@ -29,8 +29,8 @@ protocol MatchUseCase {
     var endedSets: [EndedSet] { get }
     var player1Serves: Bool { get }
 
-    func pointWonByPlayerOne() async
-    func pointWonByPlayerTwo() async
+    func pointWonByPlayerOne() async throws
+    func pointWonByPlayerTwo() async throws
     func resetMatch() async
     func undo() async throws
     func shouldShowResetMatchAlert() -> Bool

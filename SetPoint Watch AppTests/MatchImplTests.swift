@@ -21,8 +21,8 @@ final class MatchImplTest: XCTestCase {
         match = MatchImpl(settings: settings)
     }
 
-    func test_resetMatch_shouldResetTheMatch() async {
-        await goToDeuce()
+    func test_resetMatch_shouldResetTheMatch() async throws {
+        try await goToDeuce()
         await match.resetMatch()
 
         XCTAssertEqual(0, match.player1NumberOfSets)
@@ -34,30 +34,30 @@ final class MatchImplTest: XCTestCase {
         XCTAssertTrue(settings.resetCalled)
     }
 
-    func test_pointWonByPlayerOne_shouldIncrementPlayer1Points() async {
-        await match.pointWonByPlayerOne()
+    func test_pointWonByPlayerOne_shouldIncrementPlayer1Points() async throws  {
+        try await match.pointWonByPlayerOne()
         XCTAssertEqual("15", match.player1PointsDescription)
     }
 
-    func test_pointWonByPlayerOne_player1ShouldGoToAdvantage() async {
-        await goToDeuce()
-        await match.pointWonByPlayerOne()
+    func test_pointWonByPlayerOne_player1ShouldGoToAdvantage() async throws {
+        try await goToDeuce()
+        try await match.pointWonByPlayerOne()
         XCTAssertEqual("A", match.player1PointsDescription)
     }
 
-    func test_pointWonByPlayerTwo_shouldIncrementPlayer2Points() async {
-        await match.pointWonByPlayerTwo()
+    func test_pointWonByPlayerTwo_shouldIncrementPlayer2Points() async throws {
+        try await match.pointWonByPlayerTwo()
         XCTAssertEqual("15", match.player2PointsDescription)
     }
 
-    func test_pointWonByPlayerOne_shouldIncrementPlayer1Points_tiebreakMode() async {
-        await goToTiebreak()
-        await match.pointWonByPlayerOne()
+    func test_pointWonByPlayerOne_shouldIncrementPlayer1Points_tiebreakMode() async throws {
+        try await goToTiebreak()
+        try await match.pointWonByPlayerOne()
         XCTAssertEqual("1", match.player1PointsDescription)
     }
 
     func test_undo_shouldDecrementPoints() async throws {
-        await match.pointWonByPlayerOne()
+        try await match.pointWonByPlayerOne()
         try await match.undo()
         XCTAssertEqual("0", match.player1PointsDescription)
     }
@@ -68,8 +68,8 @@ final class MatchImplTest: XCTestCase {
         }
     }
 
-    func test_canUndo_shouldReturnTrueIfThereArePointsToUndo() async {
-        await match.pointWonByPlayerOne()
+    func test_canUndo_shouldReturnTrueIfThereArePointsToUndo() async throws {
+        try await match.pointWonByPlayerOne()
         XCTAssertTrue(match.canUndo)
     }
 
@@ -77,76 +77,76 @@ final class MatchImplTest: XCTestCase {
         XCTAssertFalse(match.canUndo)
     }
 
-    func test_player2GameScoreDescription_shouldReturnThePlayer2Points() async {
-        await match.pointWonByPlayerTwo()
+    func test_player2GameScoreDescription_shouldReturnThePlayer2Points() async throws {
+        try await match.pointWonByPlayerTwo()
         XCTAssertEqual("15", match.player2PointsDescription)
     }
 
-    func test_matchWin_shouldSetMatchEnded() async {
-        await repeatAsync(24 * 2) { await self.match.pointWonByPlayerOne() }
+    func test_matchWin_shouldSetMatchEnded() async throws {
+        try await repeatAsync(24 * 2) { try await self.match.pointWonByPlayerOne() }
         XCTAssertTrue(match.matchEnded)
     }
 
-    func test_tiebreakWin_shouldEndSet() async {
-        await goToTiebreak()
-        await repeatAsync(7) { await self.match.pointWonByPlayerOne() }
+    func test_tiebreakWin_shouldEndSet() async throws {
+        try await goToTiebreak()
+        try await repeatAsync(7) { try await self.match.pointWonByPlayerOne() }
         XCTAssertEqual(1, match.player1NumberOfSets)
     }
 
-    func test_deuce_shouldResetScoreToForty() async {
-        await repeatAsync(3) { await self.match.pointWonByPlayerOne() }
-        await repeatAsync(3) { await self.match.pointWonByPlayerTwo() }
-        await match.pointWonByPlayerOne()
-        await match.pointWonByPlayerTwo()
+    func test_deuce_shouldResetScoreToForty() async throws {
+        try await repeatAsync(3) { try await self.match.pointWonByPlayerOne() }
+        try await repeatAsync(3) { try await self.match.pointWonByPlayerTwo() }
+        try await match.pointWonByPlayerOne()
+        try await match.pointWonByPlayerTwo()
         XCTAssertEqual("40", match.player1PointsDescription)
         XCTAssertEqual("40", match.player2PointsDescription)
     }
 
-    func test_advantage_shouldSetAdvantageScore() async {
-        await repeatAsync(3) { await self.match.pointWonByPlayerOne() }
-        await repeatAsync(3) { await self.match.pointWonByPlayerTwo() }
-        await match.pointWonByPlayerOne()
+    func test_advantage_shouldSetAdvantageScore() async throws {
+        try await repeatAsync(3) { try await self.match.pointWonByPlayerOne() }
+        try await repeatAsync(3) { try await self.match.pointWonByPlayerTwo() }
+        try await match.pointWonByPlayerOne()
         XCTAssertEqual("A", match.player1PointsDescription)
     }
 
-    func test_gameWin_shouldResetGameScore() async {
-        await repeatAsync(4) { await self.match.pointWonByPlayerOne() }
+    func test_gameWin_shouldResetGameScore() async throws {
+        try await repeatAsync(4) { try await self.match.pointWonByPlayerOne() }
         XCTAssertEqual("0", match.player1PointsDescription)
         XCTAssertEqual("0", match.player2PointsDescription)
     }
 
-    func test_player1NumberOfGames_shouldReturnCorrectValue() async {
-        await repeatAsync(4) { await self.match.pointWonByPlayerOne() }
+    func test_player1NumberOfGames_shouldReturnCorrectValue() async throws {
+        try await repeatAsync(4) { try await self.match.pointWonByPlayerOne() }
         XCTAssertEqual(1, match.player1NumberOfGames)
     }
 
-    func test_player2NumberOfGames_shouldReturnCorrectValue() async {
-        await repeatAsync(4) { await self.match.pointWonByPlayerTwo() }
+    func test_player2NumberOfGames_shouldReturnCorrectValue() async throws {
+        try await repeatAsync(4) { try await self.match.pointWonByPlayerTwo() }
         XCTAssertEqual(1, match.player2NumberOfGames)
     }
 
-    func test_player1NumberOfSets_shouldReturnCorrectValue() async {
-        await repeatAsync(24) { await self.match.pointWonByPlayerOne() }
+    func test_player1NumberOfSets_shouldReturnCorrectValue() async throws {
+        try await repeatAsync(24) { try await self.match.pointWonByPlayerOne() }
         XCTAssertEqual(1, match.player1NumberOfSets)
     }
 
-    func test_player2NumberOfSets_shouldReturnCorrectValue() async {
-        await repeatAsync(24) { await self.match.pointWonByPlayerTwo() }
+    func test_player2NumberOfSets_shouldReturnCorrectValue() async throws {
+        try await repeatAsync(24) { try await self.match.pointWonByPlayerTwo() }
         XCTAssertEqual(1, match.player2NumberOfSets)
     }
 
-    func test_winnerDescription_shouldReturnCorrectValue() async {
-        await repeatAsync(24 * 2) { await self.match.pointWonByPlayerOne() }
+    func test_winnerDescription_shouldReturnCorrectValue() async throws {
+        try await repeatAsync(24 * 2) { try await self.match.pointWonByPlayerOne() }
         XCTAssertEqual("P1", match.winnerDescription)
     }
 
-    func test_matchEnded_shouldReturnCorrectValue() async {
-        await repeatAsync(24 * 2) { await self.match.pointWonByPlayerOne() }
+    func test_matchEnded_shouldReturnCorrectValue() async throws {
+        try await repeatAsync(24 * 2) { try await self.match.pointWonByPlayerOne() }
         XCTAssertTrue(match.matchEnded)
     }
 
-    func test_endedSets_shouldReturnCorrectValue() async {
-        await repeatAsync(24) { await self.match.pointWonByPlayerOne() }
+    func test_endedSets_shouldReturnCorrectValue() async throws {
+        try await repeatAsync(24) { try await self.match.pointWonByPlayerOne() }
         XCTAssertEqual(1, match.endedSets.count)
     }
 
@@ -154,26 +154,33 @@ final class MatchImplTest: XCTestCase {
         XCTAssertTrue(match.player1Serves)
     }
 
+    func test_matchEnded_throwErrorIfAPointIsScored() async throws {
+        try await repeatAsync(24 * 2) { try await self.match.pointWonByPlayerOne() }
+        await XCTAssertThrowsErrorAsync { [weak self] in
+            try await self?.match.pointWonByPlayerOne()
+        }
+    }
+
     // MARK: - Helpers
 
-    private func goToDeuce() async {
-        await match.pointWonByPlayerOne()
-        await match.pointWonByPlayerOne()
-        await match.pointWonByPlayerOne()
-        await match.pointWonByPlayerTwo()
-        await match.pointWonByPlayerTwo()
-        await match.pointWonByPlayerTwo()
+    private func goToDeuce() async throws {
+        try await match.pointWonByPlayerOne()
+        try await match.pointWonByPlayerOne()
+        try await match.pointWonByPlayerOne()
+        try await match.pointWonByPlayerTwo()
+        try await match.pointWonByPlayerTwo()
+        try await match.pointWonByPlayerTwo()
     }
 
-    private func goToTiebreak() async {
-        await repeatAsync(4 * 5) { await self.match.pointWonByPlayerOne() }
-        await repeatAsync(4 * 5) { await self.match.pointWonByPlayerTwo() }
-        await repeatAsync(4) { await self.match.pointWonByPlayerOne() }
-        await repeatAsync(4) { await self.match.pointWonByPlayerTwo() }
+    private func goToTiebreak() async throws  {
+        try await repeatAsync(4 * 5) { try await self.match.pointWonByPlayerOne() }
+        try await repeatAsync(4 * 5) { try await self.match.pointWonByPlayerTwo() }
+        try await repeatAsync(4) { try await self.match.pointWonByPlayerOne() }
+        try await repeatAsync(4) { try await self.match.pointWonByPlayerTwo() }
     }
 
-    private func repeatAsync(_ times: Int, action: @escaping () async -> Void) async {
-        for _ in 0..<times { await action() }
+    private func repeatAsync(_ times: Int, action: @escaping () async throws -> Void) async throws {
+        for _ in 0..<times { try await action() }
     }
 }
 

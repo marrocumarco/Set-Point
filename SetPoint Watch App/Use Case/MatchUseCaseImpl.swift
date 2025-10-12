@@ -101,12 +101,12 @@ internal class MatchUseCaseImpl: MatchUseCase {
         localizationRepository.getEndedMatchMessage() + " " + winnerName
     }
 
-    func pointWonByPlayerOne() async {
-        await match.pointWonByPlayerOne()
+    func pointWonByPlayerOne() async throws {
+        try await match.pointWonByPlayerOne()
     }
 
-    func pointWonByPlayerTwo() async {
-        await match.pointWonByPlayerTwo()
+    func pointWonByPlayerTwo() async throws {
+        try await match.pointWonByPlayerTwo()
     }
 
     func resetMatch() async {

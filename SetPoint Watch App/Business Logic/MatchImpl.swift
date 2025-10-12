@@ -36,12 +36,12 @@ internal class MatchImpl: Match {
         self.settings = settings
     }
 
-    func pointWonByPlayerOne() async {
-        pointWonBy(playerScore1, opponent: playerScore2)
+    func pointWonByPlayerOne() async throws {
+        try pointWonBy(playerScore1, opponent: playerScore2)
     }
 
-    func pointWonByPlayerTwo() async {
-        pointWonBy(playerScore2, opponent: playerScore1)
+    func pointWonByPlayerTwo() async throws {
+        try pointWonBy(playerScore2, opponent: playerScore1)
     }
 
     func undo() async throws {
@@ -68,7 +68,9 @@ internal class MatchImpl: Match {
         return statesStack.popLast()
     }
 
-    private func pointWonBy(_ playerScore: PlayerScore, opponent: PlayerScore) {
+    private func pointWonBy(_ playerScore: PlayerScore, opponent: PlayerScore) throws {
+
+        guard !matchEnded else { throw MatchError.endedMatch }
         saveOldState()
         if isTiebreakMode {
             addPointInTiebreakMode(playerScore, opponent: opponent)

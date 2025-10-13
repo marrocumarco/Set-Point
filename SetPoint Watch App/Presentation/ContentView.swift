@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(MatchViewModel.self) private var matchViewModel: MatchViewModel
-
+    @State var matchViewModel: MatchViewModel
     var body: some View {
         VStack(alignment: .center) {
-            PlayersRow()
-            GamesRow()
-            SetsRow()
-            ScoreRow()
-            SettingsRow()
+            PlayersRow(matchViewModel: matchViewModel)
+            GamesRow(matchViewModel: matchViewModel)
+            SetsRow(matchViewModel: matchViewModel)
+            ScoreRow(matchViewModel: matchViewModel)
+            SettingsRow(matchViewModel: matchViewModel)
         }
     }
 }
 
 struct PlayersRow: View {
-    @Environment(MatchViewModel.self) private var matchViewModel: MatchViewModel
+    @State var matchViewModel: MatchViewModel
     var body: some View {
         HStack {
             Text(matchViewModel.player1Name)
@@ -33,7 +32,7 @@ struct PlayersRow: View {
 }
 
 struct GamesRow: View {
-    @Environment(MatchViewModel.self) private var matchViewModel: MatchViewModel
+    @State var matchViewModel: MatchViewModel
     var body: some View {
         HStack {
             Text(matchViewModel.player1NumberOfGames.description)
@@ -46,7 +45,7 @@ struct GamesRow: View {
 }
 
 struct SetsRow: View {
-    @Environment(MatchViewModel.self) private var matchViewModel: MatchViewModel
+    @State var matchViewModel: MatchViewModel
     var body: some View {
         HStack {
             Text(matchViewModel.player1NumberOfSets.description)
@@ -59,7 +58,7 @@ struct SetsRow: View {
 }
 
 struct ScoreRow: View {
-    @Environment(MatchViewModel.self) private var matchViewModel: MatchViewModel
+    @State var matchViewModel: MatchViewModel
     var body: some View {
         HStack {
             Group {
@@ -82,13 +81,14 @@ struct ScoreRow: View {
 }
 
 struct SettingsRow: View {
-    @Environment(MatchViewModel.self) private var matchViewModel: MatchViewModel
+    @Environment(Coordinator.self) private var coordinator: Coordinator
+    @State var matchViewModel: MatchViewModel
 
     var body: some View {
         HStack {
             Group {
                 Button(action: {
-                    matchViewModel.openSettings()
+                    coordinator.push(page: .settings)
                 }, label: { Image(systemName: "gear") }).frame(width: 44)
                 Button(action: {
                     matchViewModel.resetMatch()
@@ -99,5 +99,4 @@ struct SettingsRow: View {
 }
 
 #Preview {
-    ContentView()
 }

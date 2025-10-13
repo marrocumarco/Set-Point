@@ -11,14 +11,7 @@ import SwiftUI
 struct SetPointWatchApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(
-                MatchViewModel(
-                    matchUseCase: MatchUseCaseImpl(
-                        match: MatchImpl(settings: SettingsImpl()),
-                        localizationRepository: LocalizationRepositoryImpl()
-                    )
-                )
-            )
+            CoordinatorView(coordinator: Coordinator())
         }
     }
 }

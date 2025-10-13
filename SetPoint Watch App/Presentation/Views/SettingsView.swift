@@ -19,37 +19,40 @@ struct SettingsView: View {
             }
             Button(
                 action: {
-
+                    coordinator.present(.numberOfSetsSelection(settingsViewModel.selectableNumberOfSets))
                 },
                 label: {
                     HStack {
                         Text("Number of sets")
                         Spacer()
-                        Text("3")
+                        Text(settingsViewModel.selectedNumberOfSets)
                     }.contentShape(Rectangle())
-                        .onTapGesture {
-                            coordinator.present(.numberOfSetsSelection(settingsViewModel.selectableNumberOfSets))
-                        }
                 }
             )
-
-        }
+        }.onChange(of: settingsViewModel.tiebreakEnabled) {
+            settingsViewModel.setTiebreakEnabled(settingsViewModel.tiebreakEnabled)
+        }.navigationTitle(settingsViewModel.settingsTitle)
     }
 }
 
 struct SelectNumberOfSetsView: View {
-    @State var selectableNumberOfSets: [String]
+    @State var settingsViewModel: SettingsViewModel
+    var selectableNumberOfSets: [SelectableNumberOfSets]
     var body: some View {
         Form {
-            ForEach(selectableNumberOfSets, id: \.self) { numberOfSets in
-                Button(action: {}) {
-                    Text(numberOfSets)
+            ForEach(selectableNumberOfSets) { numberOfSets in
+                Button(action: {
+                    settingsViewModel.setSelectedNumberOfSets(numberOfSets.numberOfSets)
+                }) {
+                    HStack {
+                        Text(numberOfSets.numberOfSets)
+                        if numberOfSets.numberOfSets == settingsViewModel.selectedNumberOfSets {
+                            Spacer()
+                            Image(systemName: "checkmark.circle.fill")
+                        }
+                    }
                 }
             }
         }
     }
 }
-
-//#Preview {
-//    SettingsView()
-//}

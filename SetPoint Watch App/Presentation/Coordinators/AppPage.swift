@@ -17,5 +17,5 @@ enum Sheet: Identifiable, Hashable {
         self.hashValue.description
     }
 
-    case numberOfSetsSelection([String])
+    case numberOfSetsSelection([SelectableNumberOfSets])
 }

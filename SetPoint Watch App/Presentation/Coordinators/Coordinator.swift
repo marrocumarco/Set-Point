@@ -61,10 +61,11 @@ final class Coordinator {
         }
     }
 
-    @ViewBuilder
-        func buildSheet(sheet: Sheet) -> some View {
-            switch sheet {
-            case .numberOfSetsSelection(let options): SelectNumberOfSetsView(selectableNumberOfSets: options)
-            }
+    @MainActor @ViewBuilder
+    func buildSheet(sheet: Sheet) -> some View {
+        switch sheet {
+        case .numberOfSetsSelection(let options):
+            SelectNumberOfSetsView(settingsViewModel: settingsViewModel, selectableNumberOfSets: options)
         }
+    }
 }

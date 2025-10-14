@@ -77,6 +77,14 @@ internal class MatchUseCaseImpl: MatchUseCase {
         getFormattedWinnerDescription(match.winnerDescription)
     }
 
+    var confirmMatchResetCaption: String {
+        localizationRepository.getConfirmMatchRestartMessage()
+    }
+
+    var matchEndedCaption: String {
+        localizationRepository.getEndedMatchMessage()
+    }
+
     var player1FinalScoreDescription: String {
         match.endedSets.map { "\($0.player1Score)" }.joined(separator: " ")
     }

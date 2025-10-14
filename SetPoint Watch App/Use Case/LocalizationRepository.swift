@@ -16,7 +16,6 @@ protocol LocalizationRepository {
     func getSettingsTitle() -> String
     func getTiebreakText() -> String
     func getNumberOfSetsText() -> String
-    func getConfirmTileText() -> String
     func getConfirmCaption() -> String
     func getCancelCaption() -> String
 }

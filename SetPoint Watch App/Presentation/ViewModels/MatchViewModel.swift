@@ -27,8 +27,20 @@ class MatchViewModel {
     private(set) var player2NumberOfSets: String = ""
     private(set) var gamesCaption: String = ""
     private(set) var setsCaption: String = ""
+    private(set) var player1Serves = true
+
+    var matchEndedCaption: String {
+        matchUseCase.matchEndedCaption
+    }
     private(set) var canUndo: Bool = false
+
+    var matchEnded: Bool = false
+
     private(set) var matchUseCase: any MatchUseCase
+
+    var resetAlertCaption: String {
+        matchUseCase.confirmMatchResetCaption
+    }
 
     func undo() async {
         do {
@@ -63,7 +75,7 @@ class MatchViewModel {
 
     func resetMatch() {
         Task {
-            await matchUseCase.resetMatch() //TODO: - show alert before reset
+            await matchUseCase.resetMatch()
             updateView()
         }
     }
@@ -82,5 +94,7 @@ class MatchViewModel {
         gamesCaption = matchUseCase.gamesCaption
         setsCaption = matchUseCase.setsCaption
         canUndo = matchUseCase.canUndo
+        matchEnded = matchUseCase.matchEnded
+        player1Serves = matchUseCase.player1Serves
     }
 }

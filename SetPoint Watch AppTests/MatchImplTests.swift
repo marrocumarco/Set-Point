@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import SetPoint_Watch_App
 
 final class MatchImplTest: XCTestCase {
@@ -34,7 +35,7 @@ final class MatchImplTest: XCTestCase {
         XCTAssertTrue(settings.resetCalled)
     }
 
-    func test_pointWonByPlayerOne_shouldIncrementPlayer1Points() async throws  {
+    func test_pointWonByPlayerOne_shouldIncrementPlayer1Points() async throws {
         try await match.pointWonByPlayerOne()
         XCTAssertEqual("15", match.player1PointsDescription)
     }
@@ -172,7 +173,7 @@ final class MatchImplTest: XCTestCase {
         try await match.pointWonByPlayerTwo()
     }
 
-    private func goToTiebreak() async throws  {
+    private func goToTiebreak() async throws {
         try await repeatAsync(4 * 5) { try await self.match.pointWonByPlayerOne() }
         try await repeatAsync(4 * 5) { try await self.match.pointWonByPlayerTwo() }
         try await repeatAsync(4) { try await self.match.pointWonByPlayerOne() }
@@ -190,11 +191,11 @@ private class SettingsStub: Settings {
     var selectedNumberOfSets = 3
     var resetCalled = false
 
-    func setSelectedNumberOfSets(_ numberOfSets: Int, fromUser: Bool) { }
+    func setSelectedNumberOfSets(_ numberOfSets: Int, fromUser: Bool) {}
     func getSelectedNumberOfSets() -> Int { selectedNumberOfSets }
     func getDefaultNumberOfSets() -> Int { 3 }
     func getSelectableNumberOfSets() -> [Int] { [1, 3, 5] }
-    func setTiebreakEnabled(_ enabled: Bool, fromUser: Bool) { }
+    func setTiebreakEnabled(_ enabled: Bool, fromUser: Bool) {}
     func getTiebreakEnabled() -> Bool { tiebreakEnabled }
     func getDefaultTiebreakEnabled() -> Bool { true }
     func getSettingsChanged() -> Bool { false }
@@ -203,13 +204,15 @@ private class SettingsStub: Settings {
 
 // MARK: - Async Throws Helper
 extension XCTestCase {
-    func XCTAssertThrowsErrorAsync(_ expression: @escaping () async throws -> Void,
-                                   _ message: @autoclosure () -> String = "",
-                                   file: StaticString = #filePath,
-                                   line: UInt = #line) async {
+    func XCTAssertThrowsErrorAsync(
+        _ expression: @escaping () async throws -> Void,
+        _ message: @autoclosure () -> String = "",
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) async {
         do {
             try await expression()
             XCTFail(message(), file: file, line: line)
-        } catch { /* expected */ }
+        } catch { /* expected */  }
     }
 }

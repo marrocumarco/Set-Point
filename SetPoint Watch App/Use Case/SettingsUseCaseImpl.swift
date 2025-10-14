@@ -25,10 +25,6 @@ internal class SettingsUseCaseImpl: SettingsUseCase {
         localizationRepository.getNumberOfSetsText()
     }
 
-    var confirmTileText: String {
-        localizationRepository.getConfirmTileText()
-    }
-
     init(settings: any Settings,
          dataAccess: any DataAccess,
          localizationRepository: any LocalizationRepository) throws {

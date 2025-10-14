@@ -56,8 +56,4 @@ class LocalizationRepositoryImpl: LocalizationRepository {
     func getCancelCaption() -> String {
         String(localized: "no")
     }
-
-    func getConfirmTileText() -> String {
-        String(localized: "confirm_tile")
-    }
 }

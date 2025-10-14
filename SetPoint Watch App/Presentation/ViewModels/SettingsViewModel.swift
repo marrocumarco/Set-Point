@@ -19,7 +19,7 @@ class SettingsViewModel {
 
     var tiebreakEnabled: Bool = false
     var settingsTitle: String { settingsUseCase.settingsTitle }
-    
+
     var selectableNumberOfSets: [SelectableNumberOfSets] = []
 
     var selectedNumberOfSets: String = ""
@@ -38,6 +38,10 @@ class SettingsViewModel {
         } catch {
             print(error)
         }
+    }
+
+    func confirmSettings() {
+        settingsUseCase.confirmSettings()
     }
 
     private func calculateSelectableNumberOfSets() -> [SelectableNumberOfSets] {

@@ -48,7 +48,7 @@ final class Coordinator {
     func build(page: AppPage) -> some View {
         switch page {
         case .match:
-            ContentView(
+            MatchView(
                 matchViewModel: MatchViewModel(
                     matchUseCase: MatchUseCaseImpl(
                         match: MatchImpl(settings: settings),

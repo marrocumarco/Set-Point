@@ -19,3 +19,11 @@ enum Sheet: Identifiable, Hashable {
 
     case numberOfSetsSelection([SelectableNumberOfSets])
 }
+
+enum FullScreenCover: Identifiable, Hashable {
+    var id: String {
+        self.hashValue.description
+    }
+
+    case confirmSettings
+}

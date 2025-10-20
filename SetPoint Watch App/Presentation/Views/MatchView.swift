@@ -35,17 +35,17 @@ struct PlayersRow: View {
     var body: some View {
         HStack(spacing: 10) {
             Text(matchViewModel.player1Name)
-                GeometryReader { geometry in
-                    let player1Serves = matchViewModel.player1Serves
-                    Image(systemName: "tennisball")
-                        .resizable()
-                        .foregroundStyle(.accent)
-                        .position(CGPoint(x: player1Serves ? 0 : geometry.size.width, y: geometry.size.height / 2))
-                        .animation(.easeInOut, value: player1Serves)
-                        .frame(width: 10, height: 10)
-                }
+            GeometryReader { geometry in
+                let player1Serves = matchViewModel.player1Serves
+                Image(systemName: "tennisball.fill")
+                    .resizable()
+                    .foregroundStyle(.accent)
+                    .position(CGPoint(x: player1Serves ? 0 : geometry.size.width, y: geometry.size.height / 2))
+                    .animation(.easeInOut, value: player1Serves)
+                    .frame(width: 10, height: 10)
+            }
             Text(matchViewModel.player2Name)
-        }
+        }.fontWeight(.semibold)
     }
 }
 
@@ -58,7 +58,7 @@ struct GamesRow: View {
             Text(matchViewModel.gamesCaption)
             Spacer()
             Text(matchViewModel.player2NumberOfGames.description)
-        }
+        }.fontWeight(.semibold)
     }
 }
 
@@ -71,7 +71,7 @@ struct SetsRow: View {
             Text(matchViewModel.setsCaption)
             Spacer()
             Text(matchViewModel.player2NumberOfSets.description)
-        }
+        }.fontWeight(.semibold)
     }
 }
 
@@ -82,7 +82,8 @@ struct ScoreRow: View {
             Group {
                 Button(matchViewModel.player1PointsDescription) {
                     matchViewModel.player1Scored()
-                }.foregroundStyle(.accent)
+                }.buttonStyle(.borderedProminent)
+                    .foregroundStyle(.black)
                 Button(
                     action: {
                         Task {
@@ -96,7 +97,8 @@ struct ScoreRow: View {
                     .disabled(!matchViewModel.canUndo)
                 Button(matchViewModel.player2PointsDescription) {
                     matchViewModel.player2Scored()
-                }.foregroundStyle(.accent)
+                }.buttonStyle(.borderedProminent)
+                    .foregroundStyle(.black)
             }.clipShape(.circle)
         }
     }
@@ -114,13 +116,15 @@ struct SettingsRow: View {
                         coordinator.push(page: .settings)
                     },
                     label: { Image(systemName: "gear") }
-                ).frame(width: 44)
+                ).buttonStyle(.plain)
+                    .frame(width: 44)
                 Button(
                     action: {
                         isPresented = true
                     },
                     label: { Image(systemName: "restart") }
-                ).frame(width: 44)
+                ).buttonStyle(.plain)
+                    .frame(width: 44)
             }.clipShape(.circle)
                 .alert(
                     matchViewModel.resetAlertCaption,

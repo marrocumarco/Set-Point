@@ -11,6 +11,7 @@ protocol SettingsUseCase {
     var settingsTitle: String { get }
     var tiebreakText: String { get }
     var numberOfSetsText: String { get }
+    var confirmSettingsCaption: String { get }
 
     func getSelectableNumberOfSets() -> [Int]
     func setSelectedNumberOfSets(_ numberOfSets: Int) throws

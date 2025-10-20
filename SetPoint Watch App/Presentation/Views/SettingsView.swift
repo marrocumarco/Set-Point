@@ -34,14 +34,11 @@ struct SettingsView: View {
         }.onChange(of: settingsViewModel.tiebreakEnabled) {
             settingsViewModel.setTiebreakEnabled(settingsViewModel.tiebreakEnabled)
         }.navigationTitle(settingsViewModel.settingsTitle)
-        //            .onDisappear() {
-        //            isPresented = true
-        //        }.alert("settingsAlert", isPresented: $isPresented, actions: {
-        //            Button("Ok", action: {
-        //                settingsViewModel.confirmSettings()
-        //            })
-        //            Button("cancel", action: {})
-        //        })
+            .onDisappear {
+                if settingsViewModel.showConfirmSettingsAlert {
+                    coordinator.fullScreenCover = .confirmSettings
+                }
+            }
     }
 }
 
@@ -65,6 +62,30 @@ struct SelectNumberOfSetsView: View {
                         }
                     }
                 )
+            }
+        }
+    }
+}
+
+struct ConfirmSettings: View {
+    @State var matchViewModel: MatchViewModel
+    @State var settingsViewModel: SettingsViewModel
+
+    @Environment(\.presentationMode) private var presentationMode
+
+    var body: some View {
+        ScrollView {
+            VStack {
+                Text(settingsViewModel.settingsConfirmationMessage)
+                Button("ok", role: .destructive) {
+                    settingsViewModel.confirmSettings()
+                    matchViewModel.resetMatch()
+                    presentationMode.wrappedValue.dismiss()
+                }
+                Button("cancel") {
+                    settingsViewModel.resetToLastSavedSettings()
+                    presentationMode.wrappedValue.dismiss()
+                }
             }
         }
     }

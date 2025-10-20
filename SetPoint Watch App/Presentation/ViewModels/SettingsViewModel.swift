@@ -13,27 +13,34 @@ class SettingsViewModel {
 
     internal init(settingsUseCase: any SettingsUseCase) {
         self.settingsUseCase = settingsUseCase
-        selectableNumberOfSets = calculateSelectableNumberOfSets()
-        selectedNumberOfSets = settingsUseCase.getSelectedNumberOfSets().description
+        updateState()
     }
 
     var tiebreakEnabled: Bool = false
     var settingsTitle: String { settingsUseCase.settingsTitle }
-
     var selectableNumberOfSets: [SelectableNumberOfSets] = []
-
     var selectedNumberOfSets: String = ""
+    var showConfirmSettingsAlert = false
+
+    var settingsConfirmationMessage: String { settingsUseCase.confirmSettingsCaption }
+
+    private func updateState() {
+        selectableNumberOfSets = calculateSelectableNumberOfSets()
+        selectedNumberOfSets = settingsUseCase.getSelectedNumberOfSets().description
+        tiebreakEnabled = settingsUseCase.getTiebreakEnabled()
+        showConfirmSettingsAlert = settingsUseCase.showConfirmSettingsAlert()
+    }
 
     func setTiebreakEnabled(_ isEnabled: Bool) {
         settingsUseCase.setTiebreakEnabled(isEnabled)
+        updateState()
     }
 
     func setSelectedNumberOfSets(_ numberOfSets: String) {
         do {
             if let numberOfSetsInt = Int(numberOfSets) {
                 try settingsUseCase.setSelectedNumberOfSets(numberOfSetsInt)
-                selectableNumberOfSets = calculateSelectableNumberOfSets()
-                selectedNumberOfSets = settingsUseCase.getSelectedNumberOfSets().description
+                updateState()
             }
         } catch {
             print(error)
@@ -42,6 +49,16 @@ class SettingsViewModel {
 
     func confirmSettings() {
         settingsUseCase.confirmSettings()
+    }
+
+    func resetToLastSavedSettings() {
+        do {
+            try settingsUseCase.resetToLastSavedSettings()
+            updateState()
+        } catch {
+            print(error)
+        }
+
     }
 
     private func calculateSelectableNumberOfSets() -> [SelectableNumberOfSets] {

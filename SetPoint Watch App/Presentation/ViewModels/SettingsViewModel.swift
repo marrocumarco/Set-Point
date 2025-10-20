@@ -49,6 +49,7 @@ class SettingsViewModel {
 
     func confirmSettings() {
         settingsUseCase.confirmSettings()
+        updateState()
     }
 
     func resetToLastSavedSettings() {

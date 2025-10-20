@@ -69,6 +69,7 @@ internal class SettingsUseCaseImpl: SettingsUseCase {
     func confirmSettings() {
         dataAccess.setSelectedNumberOfSets(settings.getSelectedNumberOfSets())
         dataAccess.setTiebreakEnabled(settings.getTiebreakEnabled())
+        settings.resetSettingsStatus()
     }
 
     func resetToLastSavedSettings() throws {

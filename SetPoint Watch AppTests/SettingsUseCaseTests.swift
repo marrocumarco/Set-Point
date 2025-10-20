@@ -114,6 +114,14 @@ final class SettingsUseCaseTest: XCTestCase {
         XCTAssertEqual([true], dataAccess?.setTiebreakEnabledArgs)
     }
 
+    func test_confirmSettings_ResetSettingsStatusCalled() {
+        let settings = (settings as? MockSettings)
+
+        settingsUseCase.confirmSettings()
+
+        XCTAssertTrue(settings?.resetSettingsStatusCalled ?? false)
+    }
+
     func test_resetToLastSavedSettings_resetsToSavedValues() throws {
         let settings =  (settings as? MockSettings)
         let dataAccess = (dataAccess as? MockDataAccess)

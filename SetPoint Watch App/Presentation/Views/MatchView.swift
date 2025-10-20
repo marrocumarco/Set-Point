@@ -11,13 +11,13 @@ struct MatchView: View {
     @State var matchViewModel: MatchViewModel
 
     var body: some View {
-        VStack(alignment: .center) {
+        VStack(alignment: .center, spacing: 10) {
             PlayersRow(matchViewModel: matchViewModel)
-            Spacer()
-            GamesRow(matchViewModel: matchViewModel)
-            SetsRow(matchViewModel: matchViewModel)
+            VStack {
+                GamesRow(matchViewModel: matchViewModel)
+                SetsRow(matchViewModel: matchViewModel)
+            }
             ScoreRow(matchViewModel: matchViewModel)
-            Spacer()
             SettingsRow(matchViewModel: matchViewModel)
         }.alert(
             matchViewModel.matchEndedCaption,
@@ -102,6 +102,7 @@ struct ScoreRow: View {
                 }.buttonStyle(.borderedProminent)
                     .foregroundStyle(.black)
             }.clipShape(.circle)
+                .font(.headline)
         }
     }
 }

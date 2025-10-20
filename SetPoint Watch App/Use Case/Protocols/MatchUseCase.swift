@@ -22,9 +22,8 @@ protocol MatchUseCase {
     var player2NumberOfSets: Int { get }
     var player1NumberOfGames: Int { get }
     var player2NumberOfGames: Int { get }
-    var winnerDescription: String { get }
-    var confirmMatchResetCaption: String { get }
     var matchEndedCaption: String { get }
+    var confirmMatchResetCaption: String { get }
     var player1FinalScoreDescription: String { get }
     var player2FinalScoreDescription: String { get }
     var matchEnded: Bool { get }

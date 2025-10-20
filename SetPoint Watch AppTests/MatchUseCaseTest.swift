@@ -62,8 +62,8 @@ final class MatchUseCaseTest: XCTestCase {
 
     func test_getWinnerDescription() {
         (match as? MockMatch)?.winnerDescription = "P1"
-        (localizationRepository as? MockLocalizationRepository)?.endedMatchMessage = "Game, set, match"
-        XCTAssertEqual("Game, set, match P1", matchUseCase.winnerDescription)
+        (localizationRepository as? MockLocalizationRepository)?.endedMatchMessage = "Game, set, match %@"
+        XCTAssertEqual("Game, set, match P1", matchUseCase.matchEndedCaption)
     }
 
     func test_getMatchEnded() {

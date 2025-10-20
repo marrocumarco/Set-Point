@@ -14,6 +14,7 @@ final class Coordinator {
     var path: NavigationPath = NavigationPath()
     var sheet: Sheet?
     var fullScreenCover: FullScreenCover?
+    var onDismissCover: (() -> Void)?
 
     private let settings = SettingsImpl()
     private let localizationRepository = LocalizationRepositoryImpl()
@@ -51,6 +52,15 @@ final class Coordinator {
 
     func dismissSheet() {
         sheet = nil
+    }
+
+    func present(_ cover: FullScreenCover, onDismiss: (() -> Void)?) {
+        self.fullScreenCover = cover
+        self.onDismissCover = onDismiss
+    }
+
+    func dismissCover() {
+        fullScreenCover = nil
     }
 
     @ViewBuilder

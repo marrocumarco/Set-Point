@@ -36,7 +36,12 @@ struct SettingsView: View {
         }.navigationTitle(settingsViewModel.settingsTitle)
             .onDisappear {
                 if settingsViewModel.showConfirmSettingsAlert {
-                    coordinator.fullScreenCover = .confirmSettings
+                    coordinator.present(
+                        .confirmSettings,
+                        onDismiss: {
+                            settingsViewModel.resetToLastSavedSettings()
+                        }
+                    )
                 }
             }
     }
@@ -71,7 +76,7 @@ struct ConfirmSettings: View {
     @State var matchViewModel: MatchViewModel
     @State var settingsViewModel: SettingsViewModel
 
-    @Environment(\.presentationMode) private var presentationMode
+    @Environment(Coordinator.self) private var coordinator: Coordinator
 
     var body: some View {
         ScrollView {
@@ -80,11 +85,11 @@ struct ConfirmSettings: View {
                 Button("ok", role: .destructive) {
                     settingsViewModel.confirmSettings()
                     matchViewModel.resetMatch()
-                    presentationMode.wrappedValue.dismiss()
+                    coordinator.dismissCover()
                 }
                 Button("cancel") {
                     settingsViewModel.resetToLastSavedSettings()
-                    presentationMode.wrappedValue.dismiss()
+                    coordinator.dismissCover()
                 }
             }
         }

@@ -16,10 +16,16 @@ struct CoordinatorView: View {
                 .navigationDestination(for: AppPage.self) { page in
                     coordinator.build(page: page)
                 }.sheet(item: $coordinator.sheet) { sheet in
-                   coordinator.buildSheet(sheet: sheet)
-                }.fullScreenCover(item: $coordinator.fullScreenCover) { cover in
-                    coordinator.buildCover(cover: cover)
-                }
+                    coordinator.buildSheet(sheet: sheet)
+                }.fullScreenCover(
+                    item: $coordinator.fullScreenCover,
+                    onDismiss: {
+                        coordinator.onDismissCover?()
+                    },
+                    content: { cover in
+                        coordinator.buildCover(cover: cover)
+                    }
+                )
         }.environment(coordinator)
     }
 }

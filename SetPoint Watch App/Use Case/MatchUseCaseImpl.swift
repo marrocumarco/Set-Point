@@ -73,16 +73,12 @@ internal class MatchUseCaseImpl: MatchUseCase {
         match.player2NumberOfGames
     }
 
-    var winnerDescription: String {
+    var matchEndedCaption: String {
         getFormattedWinnerDescription(match.winnerDescription)
     }
 
     var confirmMatchResetCaption: String {
         localizationRepository.getConfirmMatchRestartMessage()
-    }
-
-    var matchEndedCaption: String {
-        localizationRepository.getEndedMatchMessage()
     }
 
     var player1FinalScoreDescription: String {
@@ -106,7 +102,7 @@ internal class MatchUseCaseImpl: MatchUseCase {
     }
 
     private func getFormattedWinnerDescription(_ winnerName: String) -> String {
-        localizationRepository.getEndedMatchMessage() + " " + winnerName
+        String(format: localizationRepository.getEndedMatchMessage(), arguments: [winnerName])
     }
 
     func pointWonByPlayerOne() async throws {

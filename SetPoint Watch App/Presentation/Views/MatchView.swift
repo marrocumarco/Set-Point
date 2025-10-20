@@ -13,9 +13,11 @@ struct MatchView: View {
     var body: some View {
         VStack(alignment: .center) {
             PlayersRow(matchViewModel: matchViewModel)
+            Spacer()
             GamesRow(matchViewModel: matchViewModel)
             SetsRow(matchViewModel: matchViewModel)
             ScoreRow(matchViewModel: matchViewModel)
+            Spacer()
             SettingsRow(matchViewModel: matchViewModel)
         }.alert(
             matchViewModel.matchEndedCaption,

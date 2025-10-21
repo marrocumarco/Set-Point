@@ -11,15 +11,21 @@ struct MatchView: View {
     @State var matchViewModel: MatchViewModel
 
     var body: some View {
-        VStack(alignment: .center, spacing: 10) {
+        VStack(alignment: .center, spacing: 5) {
+            Spacer()
             PlayersRow(matchViewModel: matchViewModel)
+                .fontWeight(.medium)
+                .foregroundStyle(.cyan)
             VStack {
                 GamesRow(matchViewModel: matchViewModel)
                 SetsRow(matchViewModel: matchViewModel)
-            }
+            }.fontWeight(.medium)
             ScoreRow(matchViewModel: matchViewModel)
             SettingsRow(matchViewModel: matchViewModel)
-        }.alert(
+        }
+        .padding(12)
+        .font(.title2)
+        .alert(
             matchViewModel.matchEndedCaption,
             isPresented: $matchViewModel.matchEnded,
             actions: {
@@ -44,10 +50,10 @@ struct PlayersRow: View {
                     .foregroundStyle(.accent)
                     .position(CGPoint(x: player1Serves ? 0 : geometry.size.width, y: geometry.size.height / 2))
                     .animation(.easeInOut, value: player1Serves)
-                    .frame(width: 10, height: 10)
+                    .frame(width: 15, height: 15)
             }
             Text(matchViewModel.player2Name)
-        }.fontWeight(.semibold)
+        }
     }
 }
 
@@ -58,9 +64,10 @@ struct GamesRow: View {
             Text(matchViewModel.player1NumberOfGames.description)
             Spacer()
             Text(matchViewModel.gamesCaption)
+                .foregroundStyle(.accent)
             Spacer()
             Text(matchViewModel.player2NumberOfGames.description)
-        }.fontWeight(.semibold)
+        }
     }
 }
 
@@ -71,9 +78,10 @@ struct SetsRow: View {
             Text(matchViewModel.player1NumberOfSets.description)
             Spacer()
             Text(matchViewModel.setsCaption)
+                .foregroundStyle(.accent)
             Spacer()
             Text(matchViewModel.player2NumberOfSets.description)
-        }.fontWeight(.semibold)
+        }
     }
 }
 
@@ -84,8 +92,9 @@ struct ScoreRow: View {
             Group {
                 Button(matchViewModel.player1PointsDescription) {
                     matchViewModel.player1Scored()
-                }.buttonStyle(.borderedProminent)
-                    .foregroundStyle(.black)
+                }
+                .buttonStyle(.borderedProminent)
+                .foregroundStyle(.black)
                 Button(
                     action: {
                         Task {
@@ -95,14 +104,17 @@ struct ScoreRow: View {
                     label: {
                         Image(systemName: "arrow.uturn.backward")
                     }
-                ).frame(width: 30)
-                    .disabled(!matchViewModel.canUndo)
+                )
+                .buttonStyle(.plain)
+                .frame(width: 30)
+                .disabled(!matchViewModel.canUndo)
                 Button(matchViewModel.player2PointsDescription) {
                     matchViewModel.player2Scored()
-                }.buttonStyle(.borderedProminent)
-                    .foregroundStyle(.black)
+                }
+                .fontWeight(.medium)
+                .buttonStyle(.borderedProminent)
+                .foregroundStyle(.black)
             }.clipShape(.circle)
-                .font(.headline)
         }
     }
 }
@@ -112,7 +124,7 @@ struct SettingsRow: View {
     @State var matchViewModel: MatchViewModel
     @State var isPresented: Bool = false
     var body: some View {
-        HStack {
+        HStack(spacing: 10) {
             Group {
                 Button(
                     action: {
@@ -126,7 +138,9 @@ struct SettingsRow: View {
                         isPresented = true
                     },
                     label: { Image(systemName: "restart") }
-                ).buttonStyle(.plain)
+                )
+                .foregroundStyle(.red)
+                .buttonStyle(.plain)
                     .frame(width: 44)
             }.clipShape(.circle)
                 .alert(

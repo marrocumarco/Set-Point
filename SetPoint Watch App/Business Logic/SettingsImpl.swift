@@ -72,8 +72,8 @@ internal class SettingsImpl: Settings {
         return Self.defaultTiebreakEnabled
     }
 
-    static let defaultNumberOfSets: Int = 5
-    static let defaultTiebreakEnabled: Bool = false
+    static let defaultNumberOfSets: Int = 3
+    static let defaultTiebreakEnabled: Bool = true
 
     enum SettingsImplError: Error {
         case invalidNumberOfSets

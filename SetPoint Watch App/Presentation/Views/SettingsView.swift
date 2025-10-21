@@ -31,7 +31,9 @@ struct SettingsView: View {
                     }.contentShape(Rectangle())
                 }
             )
-        }.onChange(of: settingsViewModel.tiebreakEnabled) {
+        }
+        .font(.headline)
+        .onChange(of: settingsViewModel.tiebreakEnabled) {
             settingsViewModel.setTiebreakEnabled(settingsViewModel.tiebreakEnabled)
         }.navigationTitle(settingsViewModel.settingsTitle)
             .onDisappear {

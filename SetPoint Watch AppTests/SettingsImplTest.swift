@@ -18,8 +18,8 @@ final class SettingsImplTest: XCTestCase {
     }
 
     func test_setSelectedNumberOfSets_validNumberOfSets_fromUser_success() throws {
-        try settings.setSelectedNumberOfSets(3, fromUser: true)
-        XCTAssertEqual(3, settings.getSelectedNumberOfSets())
+        try settings.setSelectedNumberOfSets(5, fromUser: true)
+        XCTAssertEqual(5, settings.getSelectedNumberOfSets())
         XCTAssertTrue(settings.getSettingsChanged())
     }
 
@@ -44,8 +44,8 @@ final class SettingsImplTest: XCTestCase {
     }
 
     func test_setTiebreakEnabled_fromUser_true() {
-        settings.setTiebreakEnabled(true, fromUser: true)
-        XCTAssertTrue(settings.getTiebreakEnabled())
+        settings.setTiebreakEnabled(false, fromUser: true)
+        XCTAssertFalse(settings.getTiebreakEnabled())
         XCTAssertTrue(settings.getSettingsChanged())
     }
 
@@ -55,9 +55,7 @@ final class SettingsImplTest: XCTestCase {
     }
 
     func test_getSettingsChanged_selectedNumberOfSets_fromUser_true() throws {
-        try settings.setSelectedNumberOfSets(3, fromUser: true)
-        let result = settings.getSettingsChanged()
-        XCTAssertTrue(result)
+        try settings.setSelectedNumberOfSets(5, fromUser: true)
         XCTAssertTrue(settings.getSettingsChanged())
     }
 
@@ -68,7 +66,7 @@ final class SettingsImplTest: XCTestCase {
     }
 
     func test_getSettingsChanged_tiebreakEnabled_fromUser_true() {
-        settings.setTiebreakEnabled(true, fromUser: true)
+        settings.setTiebreakEnabled(false, fromUser: true)
         let result = settings.getSettingsChanged()
         XCTAssertTrue(result)
     }

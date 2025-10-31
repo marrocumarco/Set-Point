@@ -1,133 +1,506 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "cancel": {
-      "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "Cancel" } },
-        "it": { "stringUnit": { "state": "translated", "value": "Annulla" } },
-        "es": { "stringUnit": { "state": "translated", "value": "Cancelar" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "Annuler" } },
-        "de": { "stringUnit": { "state": "translated", "value": "Abbrechen" } }
+  "sourceLanguage" : "en",
+  "strings" : {
+    "cancel" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abbrechen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
+          }
+        }
       }
     },
-    "confirm_match_reset": {
-      "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "Score will be reset, continue?" } },
-        "it": { "stringUnit": { "state": "translated", "value": "Il punteggio verrà azzerato, continuare?" } },
-        "es": { "stringUnit": { "state": "translated", "value": "La puntuación se reiniciará, ¿continuar?" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "Le score sera réinitialisé, continuer ?" } },
-        "de": { "stringUnit": { "state": "translated", "value": "Der Spielstand wird zurückgesetzt. Fortfahren?" } }
+    "confirm_match_reset" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Spielstand wird zurückgesetzt. Fortfahren?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Score will be reset, continue?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La puntuación se reiniciará, ¿continuar?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le score sera réinitialisé, continuer ?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il punteggio verrà azzerato, continuare?"
+          }
+        }
       }
     },
-    "confirm_settings": {
-      "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "Do you want to save and reset the score?" } },
-        "it": { "stringUnit": { "state": "translated", "value": "Vuoi salvare e azzerare il punteggio?" } },
-        "es": { "stringUnit": { "state": "translated", "value": "¿Quieres guardar y reiniciar la puntuación?" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "Souhaitez-vous enregistrer et réinitialiser le score ?" } },
-        "de": { "stringUnit": { "state": "translated", "value": "Möchtest du speichern und den Spielstand zurücksetzen?" } }
+    "confirm_settings" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchtest du speichern und den Spielstand zurücksetzen?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you want to save and reset the score?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Quieres guardar y reiniciar la puntuación?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Souhaitez-vous enregistrer et réinitialiser le score ?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vuoi salvare e azzerare il punteggio?"
+          }
+        }
       }
     },
-    "ended_match": {
-      "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "Game, set, match %@\nDo you want to play again?" } },
-        "it": { "stringUnit": { "state": "translated", "value": "Gioco, partita, incontro %@\nVuoi giocare ancora?" } },
-        "es": { "stringUnit": { "state": "translated", "value": "Juego, set y partido %@\n¿Quieres jugar otra vez?" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "Jeu, set et match %@\nVoulez-vous rejouer ?" } },
-        "de": { "stringUnit": { "state": "translated", "value": "Spiel, Satz und Match %@\nMöchtest du noch einmal spielen?" } }
+    "ended_match" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spiel, Satz und Match %@\nMöchtest du noch einmal spielen?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Game, set, match %@\nDo you want to play again?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Juego, set y partido %@\n¿Quieres jugar otra vez?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeu, set et match %@\nVoulez-vous rejouer ?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gioco, partita, incontro %@\nVuoi giocare ancora?"
+          }
+        }
       }
     },
-    "games": {
-      "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "Games" } },
-        "it": { "stringUnit": { "state": "translated", "value": "Giochi" } },
-        "es": { "stringUnit": { "state": "translated", "value": "Juegos" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "Jeux" } },
-        "de": { "stringUnit": { "state": "translated", "value": "Spiele" } }
+    "games" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spiele"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Games"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Juegos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeux"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giochi"
+          }
+        }
       }
     },
-    "no": {
-      "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "No" } },
-        "it": { "stringUnit": { "state": "translated", "value": "No" } },
-        "es": { "stringUnit": { "state": "translated", "value": "No" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "Non" } },
-        "de": { "stringUnit": { "state": "translated", "value": "Nein" } }
+    "no" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nein"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No"
+          }
+        }
       }
     },
-    "Number of sets": {
-      "comment": "A label displayed above a slider that allows the user to select the number of sets in a match.",
-      "isCommentAutoGenerated": true,
-      "localizations": {
-        "it": { "stringUnit": { "state": "translated", "value": "Numero di set" } },
-        "es": { "stringUnit": { "state": "translated", "value": "Número de sets" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "Nombre de sets" } },
-        "de": { "stringUnit": { "state": "translated", "value": "Anzahl der Sätze" } }
+    "Number of sets" : {
+      "comment" : "A label displayed above a slider that allows the user to select the number of sets in a match.",
+      "isCommentAutoGenerated" : true,
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anzahl der Sätze"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de sets"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de sets"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numero di set"
+          }
+        }
       }
     },
-    "ok": {
-      "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "Ok" } },
-        "it": { "stringUnit": { "state": "translated", "value": "Conferma" } },
-        "es": { "stringUnit": { "state": "translated", "value": "Aceptar" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "OK" } },
-        "de": { "stringUnit": { "state": "translated", "value": "OK" } }
+    "ok" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aceptar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conferma"
+          }
+        }
       }
     },
-    "player1": {
-      "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "P1" } },
-        "it": { "stringUnit": { "state": "translated", "value": "G1" } },
-        "es": { "stringUnit": { "state": "translated", "value": "J1" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "J1" } },
-        "de": { "stringUnit": { "state": "translated", "value": "S1" } }
+    "player1" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S1"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "P1"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "J1"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "J1"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "G1"
+          }
+        }
       }
     },
-    "player2": {
-      "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "P2" } },
-        "it": { "stringUnit": { "state": "translated", "value": "G2" } },
-        "es": { "stringUnit": { "state": "translated", "value": "J2" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "J2" } },
-        "de": { "stringUnit": { "state": "translated", "value": "S2" } }
+    "player2" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S2"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "P2"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "J2"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "J2"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "G2"
+          }
+        }
       }
     },
-    "sets": {
-      "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "Sets" } },
-        "it": { "stringUnit": { "state": "translated", "value": "Set" } },
-        "es": { "stringUnit": { "state": "translated", "value": "Sets" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "Sets" } },
-        "de": { "stringUnit": { "state": "translated", "value": "Sätze" } }
+    "Restart" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neustart"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reiniciar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recommencer"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riavvia"
+          }
+        }
       }
     },
-    "settings_title": {
-      "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "Settings" } },
-        "it": { "stringUnit": { "state": "translated", "value": "Impostazioni" } },
-        "es": { "stringUnit": { "state": "translated", "value": "Configuración" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "Paramètres" } },
-        "de": { "stringUnit": { "state": "translated", "value": "Einstellungen" } }
+    "sets" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sätze"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sets"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sets"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sets"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set"
+          }
+        }
       }
     },
-    "tiebreak": {
-      "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "Tie-break" } },
-        "it": { "stringUnit": { "state": "translated", "value": "Tie-break" } },
-        "es": { "stringUnit": { "state": "translated", "value": "Desempate" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "Jeu décisif" } },
-        "de": { "stringUnit": { "state": "translated", "value": "Tiebreak" } }
+    "settings_title" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einstellungen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuración"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paramètres"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni"
+          }
+        }
       }
     },
-    "yes": {
-      "localizations": {
-        "en": { "stringUnit": { "state": "translated", "value": "Yes" } },
-        "it": { "stringUnit": { "state": "translated", "value": "Sì" } },
-        "es": { "stringUnit": { "state": "translated", "value": "Sí" } },
-        "fr": { "stringUnit": { "state": "translated", "value": "Oui" } },
-        "de": { "stringUnit": { "state": "translated", "value": "Ja" } }
+    "tiebreak" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiebreak"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tie-break"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desempate"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeu décisif"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tie-break"
+          }
+        }
+      }
+    },
+    "yes" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ja"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sí"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oui"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sì"
+          }
+        }
       }
     }
   },
-  "version": "1.1"
+  "version" : "1.1"
 }

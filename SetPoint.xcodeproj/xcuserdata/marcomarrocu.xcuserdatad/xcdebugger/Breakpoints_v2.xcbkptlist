@@ -55,16 +55,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B43862B5-678D-416D-AF11-B9A29160823F"
+            uuid = "427D4D4C-E4AC-4251-92D1-64BED63B7E04"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SetPoint Watch App/Use Case/MatchUseCaseImpl.swift"
+            filePath = "SetPoint Watch App/Presentation/Views/MatchView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "matchEndedCaption"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>

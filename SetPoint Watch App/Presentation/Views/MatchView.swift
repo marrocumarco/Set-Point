@@ -9,32 +9,38 @@ import SwiftUI
 
 struct MatchView: View {
     @State var matchViewModel: MatchViewModel
-
+    @State var selection = 0
     var body: some View {
-        VStack(alignment: .center, spacing: 5) {
-            Spacer()
-            PlayersRow(matchViewModel: matchViewModel)
-                .fontWeight(.medium)
-                .foregroundStyle(.cyan)
-            VStack {
-                GamesRow(matchViewModel: matchViewModel)
-                SetsRow(matchViewModel: matchViewModel)
-            }.fontWeight(.medium)
-            ScoreRow(matchViewModel: matchViewModel)
-            SettingsRow(matchViewModel: matchViewModel)
-        }
-        .padding(12)
-        .font(.title2)
-        .alert(
-            matchViewModel.matchEndedCaption,
-            isPresented: $matchViewModel.matchEnded,
-            actions: {
-                Button("ok") {
-                    matchViewModel.resetMatch()
-                }
-                Button("cancel", role: .cancel) {}
-            }
-        )
+        TabView(selection: $selection) {
+
+            VStack(alignment: .center, spacing: 5) {
+                Spacer()
+                PlayersRow(matchViewModel: matchViewModel)
+                    .fontWeight(.medium)
+                    .foregroundStyle(.cyan)
+                VStack {
+                    GamesRow(matchViewModel: matchViewModel)
+                    SetsRow(matchViewModel: matchViewModel)
+                }.fontWeight(.medium)
+                ScoreRow(matchViewModel: matchViewModel)
+            }.tag(0)
+                .padding(12)
+                .font(.title2)
+                .alert(
+                    matchViewModel.matchEndedCaption,
+                    isPresented: $matchViewModel.matchEnded,
+                    actions: {
+                        Button("ok") {
+                            matchViewModel.resetMatch()
+                        }
+                        Button("cancel", role: .cancel) {}
+                    }
+                )
+
+            SettingsRow(matchViewModel: matchViewModel, selection: $selection)
+                .tag(1)
+
+        }.tabViewStyle(.carousel)
     }
 }
 
@@ -106,7 +112,7 @@ struct ScoreRow: View {
                     }
                 )
                 .buttonStyle(.plain)
-                .frame(width: 30)
+                //                .frame(width: 30)
                 .disabled(!matchViewModel.canUndo)
                 Button(matchViewModel.player2PointsDescription) {
                     matchViewModel.player2Scored()
@@ -123,26 +129,33 @@ struct SettingsRow: View {
     @Environment(Coordinator.self) private var coordinator: Coordinator
     @State var matchViewModel: MatchViewModel
     @State var isPresented: Bool = false
+    @State var selection: Binding<Int>
     var body: some View {
-        HStack(spacing: 10) {
-            Group {
-                Button(
-                    action: {
-                        coordinator.push(page: .settings)
-                    },
-                    label: { Image(systemName: "gear") }
-                ).buttonStyle(.plain)
-                    .frame(width: 44)
-                Button(
-                    action: {
-                        isPresented = true
-                    },
-                    label: { Image(systemName: "restart") }
-                )
-                .foregroundStyle(.red)
-                .buttonStyle(.plain)
-                    .frame(width: 44)
-            }.clipShape(.circle)
+        VStack {
+            HStack {
+                Group {
+                    VStack {
+                        Button(
+                            action: {
+                                coordinator.push(page: .settings)
+                            },
+                            label: {
+                                Image(systemName: "gear")
+                            }
+                        )
+                        Text("settings_title")
+                    }
+                    VStack {
+                        Button(
+                            action: {
+                                isPresented = true
+                            },
+                            label: { Image(systemName: "restart") }
+                        )
+                        .foregroundStyle(.red)
+                        Text("Restart")
+                    }
+                }
                 .alert(
                     matchViewModel.resetAlertCaption,
                     isPresented: $isPresented,
@@ -152,11 +165,14 @@ struct SettingsRow: View {
                             role: .destructive,
                             action: {
                                 matchViewModel.resetMatch()
+                                selection.wrappedValue = 0
                             }
                         )
                         Button("cancel", role: .cancel) {}
                     }
                 )
-        }
+            }
+            Spacer()
+        }.padding()
     }
 }

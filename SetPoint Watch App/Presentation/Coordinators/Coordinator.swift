@@ -88,6 +88,8 @@ final class Coordinator {
         switch cover {
         case .confirmSettings:
             ConfirmSettings(matchViewModel: matchViewModel, settingsViewModel: settingsViewModel)
+        case .matchEnded:
+            MatchEnded(matchViewModel: matchViewModel)
         }
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MatchView: View {
+    @Environment(Coordinator.self) private var coordinator: Coordinator
     @State var matchViewModel: MatchViewModel
     @State var selection = 0
     var body: some View {
@@ -26,16 +27,11 @@ struct MatchView: View {
             }.tag(0)
                 .padding(12)
                 .font(.title2)
-                .alert(
-                    matchViewModel.matchEndedCaption,
-                    isPresented: $matchViewModel.matchEnded,
-                    actions: {
-                        Button("ok") {
-                            matchViewModel.resetMatch()
-                        }
-                        Button("cancel", role: .cancel) {}
+                .onChange(of: matchViewModel.matchEnded) {
+                    if matchViewModel.matchEnded {
+                        coordinator.present(.matchEnded, onDismiss: nil)
                     }
-                )
+                }
 
             SettingsRow(matchViewModel: matchViewModel, selection: $selection)
                 .tag(1)
@@ -174,5 +170,26 @@ struct SettingsRow: View {
             }
             Spacer()
         }.padding()
+    }
+}
+
+struct MatchEnded: View {
+    @State var matchViewModel: MatchViewModel
+
+    @Environment(Coordinator.self) private var coordinator: Coordinator
+
+    var body: some View {
+        ScrollView {
+            VStack {
+                Text(matchViewModel.matchEndedCaption)
+                Button("ok", role: .destructive) {
+                    matchViewModel.resetMatch()
+                    coordinator.dismissCover()
+                }
+                Button("cancel") {
+                    coordinator.dismissCover()
+                }
+            }
+        }
     }
 }

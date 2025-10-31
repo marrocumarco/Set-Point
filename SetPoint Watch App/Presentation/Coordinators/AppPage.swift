@@ -26,4 +26,5 @@ enum FullScreenCover: Identifiable, Hashable {
     }
 
     case confirmSettings
+    case matchEnded
 }

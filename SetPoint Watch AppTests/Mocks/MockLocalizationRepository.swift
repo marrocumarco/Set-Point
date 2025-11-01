@@ -6,9 +6,14 @@
 //
 
 import Foundation
+
 @testable import SetPoint_Watch_App
 
 final class MockLocalizationRepository: LocalizationRepository {
+    func getPlayAgainMessage() -> String {
+        ""
+    }
+
     func getPlayer1Name() -> String {
         ""
     }

@@ -108,31 +108,31 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spiel, Satz und Match %@\nMöchtest du noch einmal spielen?"
+            "value" : "Spiel, Satz und Match %@"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Game, set, match %@\nDo you want to play again?"
+            "value" : "Game, set, match %@"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Juego, set y partido %@\n¿Quieres jugar otra vez?"
+            "value" : "Juego, set y partido %@"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Jeu, set et match %@\nVoulez-vous rejouer ?"
+            "value" : "Jeu, set et match %@"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gioco, partita, incontro %@\nVuoi giocare ancora?"
+            "value" : "Gioco, partita, incontro %@"
           }
         }
       }
@@ -265,6 +265,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Conferma"
+          }
+        }
+      }
+    },
+    "play_again" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möchtest du noch einmal spielen?"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Do you want to play again?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Quieres jugar otra vez?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voulez-vous rejouer?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vuoi giocare ancora?"
           }
         }
       }

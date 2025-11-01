@@ -180,15 +180,27 @@ struct MatchEnded: View {
 
     var body: some View {
         ScrollView {
-            VStack {
-                Text(matchViewModel.matchEndedCaption)
-                Button("ok", role: .destructive) {
-                    matchViewModel.resetMatch()
-                    coordinator.dismissCover()
+            VStack(spacing: 5) {
+                Text(matchViewModel.matchEndedCaption).font(.headline)
+                HStack {
+                    VStack {
+                        Text(matchViewModel.player1Name)
+                        Text(matchViewModel.player2Name)
+                    }
+                    VStack {
+                        Text(matchViewModel.player1FinalScoreDescription)
+                        Text(matchViewModel.player2FinalScoreDescription)
+                    }
+                    Spacer()
                 }
-                Button("cancel") {
-                    coordinator.dismissCover()
-                }
+                Text(matchViewModel.playAgainCaption)
+                    Button("ok", role: .destructive) {
+                        matchViewModel.resetMatch()
+                        coordinator.dismissCover()
+                    }
+                    Button("cancel") {
+                        coordinator.dismissCover()
+                    }
             }
         }
     }

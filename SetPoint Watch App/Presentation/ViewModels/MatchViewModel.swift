@@ -32,6 +32,11 @@ class MatchViewModel {
     var matchEndedCaption: String {
         matchUseCase.matchEndedCaption
     }
+
+    var playAgainCaption: String {
+        matchUseCase.playAgainCaption
+    }
+
     private(set) var canUndo: Bool = false
 
     var matchEnded: Bool = false
@@ -40,6 +45,14 @@ class MatchViewModel {
 
     var resetAlertCaption: String {
         matchUseCase.confirmMatchResetCaption
+    }
+
+    var player1FinalScoreDescription: String {
+        matchUseCase.player1FinalScoreDescription
+    }
+
+    var player2FinalScoreDescription: String {
+        matchUseCase.player2FinalScoreDescription
     }
 
     func undo() async {

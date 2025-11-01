@@ -77,6 +77,10 @@ internal class MatchUseCaseImpl: MatchUseCase {
         getFormattedWinnerDescription(match.winnerDescription)
     }
 
+    var playAgainCaption: String {
+        localizationRepository.getPlayAgainMessage()
+    }
+
     var confirmMatchResetCaption: String {
         localizationRepository.getConfirmMatchRestartMessage()
     }

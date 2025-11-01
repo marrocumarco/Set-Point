@@ -11,6 +11,7 @@ protocol LocalizationRepository {
     func getConfirmMatchRestartMessage() -> String
     func getConfirmSettingsMessage() -> String
     func getEndedMatchMessage() -> String
+    func getPlayAgainMessage() -> String
     func getGamesCaption() -> String
     func getSetsCaption() -> String
     func getSettingsTitle() -> String

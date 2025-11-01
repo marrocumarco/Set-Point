@@ -29,6 +29,10 @@ class LocalizationRepositoryImpl: LocalizationRepository {
         String(localized: "ended_match")
     }
 
+    func getPlayAgainMessage() -> String {
+        String(localized: "play_again")
+    }
+
     func getGamesCaption() -> String {
         String(localized: "games")
     }
